@@ -1,187 +1,650 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yusufjon Pro Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yusufjon | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --bg1: #071a24;
+      --bg2: #0e2f3f;
+      --bg3: #1f4f63;
+      --card: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.12);
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.75);
+      --accent: #1fb6ff;
+      --accent2: #6a5cff;
+      --shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: white;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(31,182,255,0.16), transparent 30%),
+        radial-gradient(circle at top right, rgba(106,92,255,0.18), transparent 30%),
+        linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
       min-height: 100vh;
       overflow-x: hidden;
     }
 
-    .hero {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 20px 40px;
-      text-align: center;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .avatar {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid rgba(255,255,255,0.7);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-      margin-bottom: 20px;
+    .container {
+      width: min(1150px, 92%);
+      margin: 0 auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 26, 36, 0.45);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+
+    .logo span {
+      background: linear-gradient(45deg, var(--accent), #7fdcff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 500;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      padding: 70px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      color: #d9f3ff;
+      margin-bottom: 18px;
+      font-size: 14px;
     }
 
     h1 {
-      font-size: 52px;
-      margin-bottom: 12px;
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1.05;
+      margin-bottom: 14px;
+      font-weight: 800;
     }
 
-    .subtitle {
-      font-size: 20px;
-      opacity: 0.9;
-      margin-bottom: 40px;
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 640px;
+    }
+
+    .typing {
+      color: #bfefff;
+      font-weight: 600;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      padding: 14px 22px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      transition: 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary {
+      background: linear-gradient(45deg, var(--accent), #0d8bff);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      border-color: var(--border);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-3px);
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 28px;
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(31,182,255,0.18);
+      top: -50px;
+      right: -40px;
+      filter: blur(20px);
+    }
+
+    .avatar {
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.7);
+      margin-bottom: 18px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+      background: #0c2735;
+    }
+
+    .mini-title {
+      color: #dff7ff;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .mini-name {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .mini-desc {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .stat h3 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .stat p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 28px 0 70px;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.8;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
     .card {
-      background: rgba(255,255,255,0.10);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.15);
+      background: var(--card);
+      border: 1px solid var(--border);
       border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: left;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-    }
-
-    .card h2 {
-      margin-bottom: 16px;
-      font-size: 26px;
-    }
-
-    .card p, .card li {
-      font-size: 17px;
-      line-height: 1.7;
-      opacity: 0.95;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .buttons {
-      margin-top: 35px;
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
       transition: 0.3s ease;
     }
 
-    .btn-primary {
-      background: linear-gradient(45deg, #00c6ff, #0072ff);
-      color: white;
-      box-shadow: 0 8px 20px rgba(0,114,255,0.35);
+    .card:hover {
+      transform: translateY(-7px);
     }
 
-    .btn-primary:hover {
-      transform: scale(1.05);
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
     }
 
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.4);
-      color: white;
+    .card p, .card li {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .skills-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .skill {
+      margin-bottom: 18px;
+    }
+
+    .skill-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #e9fbff;
+    }
+
+    .bar {
+      width: 100%;
+      height: 12px;
+      border-radius: 999px;
       background: rgba(255,255,255,0.08);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.15);
-      transform: scale(1.05);
+    .fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    .project-tag {
+      display: inline-block;
+      font-size: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-top: 14px;
+      background: rgba(255,255,255,0.08);
+      color: #d7f7ff;
+      border: 1px solid var(--border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      margin-bottom: 14px;
+    }
+
+    .contact-item span {
+      font-size: 24px;
     }
 
     .footer {
+      padding: 26px 0 40px;
+      color: rgba(255,255,255,0.6);
       text-align: center;
-      padding: 35px 20px 50px;
-      opacity: 0.75;
-      font-size: 15px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .floating {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 99;
+    }
+
+    .to-top {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      background: linear-gradient(45deg, var(--accent), #118cff);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .cards,
+      .skills-box,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-wrap {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
     }
   </style>
 </head>
 <body>
-  <section class="hero">
-    <img class="avatar" src="https://i.imgur.com/8Km9tLL.png" alt="Avatar">
-    <h1>👋 Yusufjon</h1>
-    <p class="subtitle">Dasturchi • AI Developer • Portfolio Website</p>
 
-    <div class="cards">
-      <div class="card">
-        <h2>🚀 Men haqimda</h2>
-        <p>
-          Men dasturlashni o‘rganayapman va sun’iy intellekt bilan ishlayman.
-          Mening maqsadim — kuchli IT mutaxassisi bo‘lish.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>💻 Loyihalarim</h2>
-        <ul>
-          <li>Smart Service Finder</li>
-          <li>AI Video Generator</li>
-          <li>Matritsa o‘yini</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>🛠 Texnologiyalar</h2>
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>Python</li>
-          <li>AI Tools</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>📞 Kontakt</h2>
-        <p>Telegram: @username</p>
-        <p>Email: example@gmail.com</p>
+  <nav class="navbar">
+    <div class="container nav-wrap">
+      <div class="logo">Yusufjon<span>.dev</span></div>
+      <div class="nav-links">
+        <a href="#about">Men haqimda</a>
+        <a href="#skills">Ko‘nikmalar</a>
+        <a href="#projects">Loyihalar</a>
+        <a href="#contact">Kontakt</a>
       </div>
     </div>
+  </nav>
 
-    <div class="buttons">
-      <a class="btn btn-primary" href="https://t.me/username" target="_blank">Bog‘lanish</a>
-      <a class="btn btn-secondary" href="https://github.com/muhammadiyevyusufjon72-hash" target="_blank">GitHub</a>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">🚀 Portfolio Website</div>
+        <h1>Salom, men Yusufjon</h1>
+        <p>
+          Men dasturlashni o‘rganayotgan va AI bilan ishlayotgan yosh developer-man.
+          Hozir <span class="typing" id="typingText">HTML, CSS va portfolio saytlar</span> ustida ishlayapman.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">💻 Loyihalarni ko‘rish</a>
+          <a href="#contact" class="btn btn-secondary">📞 Bog‘lanish</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img
+          class="avatar"
+          src="https://i.imgur.com/8Km9tLL.png"
+          alt="Avatar"
+        />
+        <div class="mini-title">Frontend / AI Enthusiast</div>
+        <div class="mini-name">Yusufjon</div>
+        <div class="mini-desc">
+          Portfolio, web sahifalar, AI loyihalar va oddiydan professionalgacha
+          bo‘lgan UI dizaynlar ustida ishlayman.
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <h3>3+</h3>
+            <p>Loyiha</p>
+          </div>
+          <div class="stat">
+            <h3>5+</h3>
+            <p>Ko‘nikma</p>
+          </div>
+          <div class="stat">
+            <h3>100%</h3>
+            <p>Motivatsiya</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">Men haqimda</h2>
+      <p class="section-sub">
+        Men IT va sun’iy intellekt yo‘nalishiga qiziqaman. Oddiy g‘oyalarni chiroyli
+        sayt, foydali loyiha va zamonaviy interfeysga aylantirishni yoqtiraman.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>🎯 Maqsadim</h3>
+          <p>Kuchli dasturchi bo‘lish va foydali, zamonaviy loyihalar yaratish.</p>
+        </div>
+        <div class="card">
+          <h3>🧠 Qiziqishlarim</h3>
+          <p>Web development, AI tools, dizayn, mobil ilova g‘oyalari.</p>
+        </div>
+        <div class="card">
+          <h3>⚡ Uslubim</h3>
+          <p>Sodda, chiroyli, tushunarli va zamonaviy dizaynli loyihalarni yaxshi ko‘raman.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Ko‘nikmalarim</h2>
+      <p class="section-sub">
+        Hozir o‘rganayotgan va ishlatayotgan asosiy texnologiyalarim.
+      </p>
+
+      <div class="skills-box">
+        <div class="card">
+          <div class="skill">
+            <div class="skill-top"><span>HTML</span><span>85%</span></div>
+            <div class="bar"><div class="fill" style="width:85%"></div></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-top"><span>CSS</span><span>80%</span></div>
+            <div class="bar"><div class="fill" style="width:80%"></div></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-top"><span>JavaScript</span><span>55%</span></div>
+            <div class="bar"><div class="fill" style="width:55%"></div></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-top"><span>Python</span><span>65%</span></div>
+            <div class="bar"><div class="fill" style="width:65%"></div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🛠 Ishlay olaman</h3>
+          <p>Responsive sahifalar, portfolio website, basic UI dizayn, GitHub Pages, AI promptlar.</p>
+          <div class="project-tag">Frontend</div>
+          <div class="project-tag">Portfolio</div>
+          <div class="project-tag">AI Tools</div>
+          <div class="project-tag">GitHub</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Loyihalarim</h2>
+      <p class="section-sub">
+        Men qilgan yoki ustida ishlayotgan asosiy loyihalar.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>💼 Smart Service Finder</h3>
+          <p>Foydalanuvchilar uchun xizmat topishga yordam beradigan zamonaviy loyiha g‘oyasi.</p>
+          <div class="project-tag">Web App</div>
+        </div>
+
+        <div class="card">
+          <h3>🎬 AI Video Generator</h3>
+          <p>Prompt orqali video va media kontent yaratishga yo‘naltirilgan loyiha.</p>
+          <div class="project-tag">AI Project</div>
+        </div>
+
+        <div class="card">
+          <h3>🧩 Matritsa o‘yini</h3>
+          <p>Mantiqiy va foydali kichik o‘yin loyihasi, foydalanuvchi bilan interaktiv ishlaydi.</p>
+          <div class="project-tag">Game Logic</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Bog‘lanish</h2>
+      <p class="section-sub">
+        Men bilan bog‘lanish uchun quyidagi ma’lumotlardan foydalaning.
+      </p>
+
+      <div class="contact-grid">
+        <div class="card">
+          <div class="contact-item">
+            <span>📱</span>
+            <div>
+              <strong>Telegram</strong><br>
+              @username
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span>💻</span>
+            <div>
+              <strong>GitHub</strong><br>
+              muhammadiyevyusufjon72-hash
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span>📧</span>
+            <div>
+              <strong>Email</strong><br>
+              example@gmail.com
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🚀 Tez havolalar</h3>
+          <p style="margin-bottom: 16px;">
+            Quyidagi tugmalar orqali tezda bog‘lanishingiz mumkin.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="https://t.me/username" target="_blank" class="btn btn-primary">Telegram</a>
+            <a href="https://github.com/muhammadiyevyusufjon72-hash" target="_blank" class="btn btn-secondary">GitHub</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <div class="footer">
-    © 2026 Yusufjon Portfolio
+    © 2026 Yusufjon Portfolio. Barcha huquqlar himoyalangan.
   </div>
+
+  <div class="floating">
+    <button class="to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+  </div>
+
+  <script>
+    const words = [
+      "HTML, CSS va portfolio saytlar",
+      "AI tools va zamonaviy interfeyslar",
+      "GitHub Pages va web loyihalar"
+    ];
+
+    let i = 0;
+    const typingText = document.getElementById("typingText");
+
+    setInterval(() => {
+      i = (i + 1) % words.length;
+      typingText.textContent = words[i];
+    }, 2200);
+  </script>
 </body>
 </html>
