@@ -3,442 +3,715 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yusufjon | Portfolio</title>
+  <title>Yusufjon | Premium Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg1: #071a24;
-      --bg2: #0e2f3f;
-      --bg3: #1f4f63;
-      --card: rgba(255,255,255,0.08);
-      --border: rgba(255,255,255,0.12);
-      --text: #ffffff;
-      --muted: rgba(255,255,255,0.75);
-      --accent: #1fb6ff;
-      --accent2: #6a5cff;
-      --shadow: 0 20px 40px rgba(0,0,0,0.25);
+    :root{
+      --bg1:#03111f;
+      --bg2:#071d33;
+      --bg3:#0d2b4a;
+      --card:rgba(14, 30, 55, 0.68);
+      --border:rgba(112, 196, 255, 0.18);
+      --text:#f5fbff;
+      --muted:rgba(220,240,255,0.76);
+      --cyan:#22d3ee;
+      --blue:#38bdf8;
+      --purple:#a855f7;
+      --pink:#ec4899;
+      --shadow:0 20px 50px rgba(0,0,0,.35);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
     }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      color: var(--text);
+    body{
+      font-family:'Poppins',sans-serif;
+      color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(31,182,255,0.16), transparent 30%),
-        radial-gradient(circle at top right, rgba(106,92,255,0.18), transparent 30%),
-        linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
-      min-height: 100vh;
-      overflow-x: hidden;
+        radial-gradient(circle at 20% 20%, rgba(56,189,248,.12), transparent 18%),
+        radial-gradient(circle at 80% 15%, rgba(168,85,247,.10), transparent 18%),
+        radial-gradient(circle at 50% 80%, rgba(34,211,238,.08), transparent 22%),
+        linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+      min-height:100vh;
+      overflow-x:hidden;
+      position:relative;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size:40px 40px;
+      pointer-events:none;
+      z-index:0;
     }
 
-    .container {
-      width: min(1150px, 92%);
-      margin: 0 auto;
+    .floating-code{
+      position:fixed;
+      inset:0;
+      overflow:hidden;
+      pointer-events:none;
+      z-index:0;
     }
 
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(14px);
-      background: rgba(7, 26, 36, 0.45);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+    .floating-code span{
+      position:absolute;
+      color:rgba(90,170,255,.12);
+      font-weight:600;
+      user-select:none;
+      animation: floatY linear infinite;
     }
 
-    .nav-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 0;
+    @keyframes floatY{
+      from{transform:translateY(20px);}
+      to{transform:translateY(-30px);}
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: 0.4px;
+    a{
+      color:inherit;
+      text-decoration:none;
     }
 
-    .logo span {
-      background: linear-gradient(45deg, var(--accent), #7fdcff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .container{
+      width:min(1120px,92%);
+      margin:0 auto;
+      position:relative;
+      z-index:1;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(3,17,31,.55);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.05);
     }
 
-    .nav-links a {
-      color: var(--muted);
-      font-weight: 500;
-      transition: 0.25s;
+    .nav-wrap{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 0;
+      gap:20px;
     }
 
-    .nav-links a:hover {
-      color: #fff;
+    .logo{
+      font-size:24px;
+      font-weight:800;
+      letter-spacing:.4px;
     }
 
-    .hero {
-      padding: 70px 0 40px;
+    .logo span{
+      background:linear-gradient(45deg,var(--cyan),var(--purple),var(--pink));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 28px;
-      align-items: center;
+    .nav-links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      align-items:center;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid var(--border);
-      color: #d9f3ff;
-      margin-bottom: 18px;
-      font-size: 14px;
+    .nav-links a{
+      color:var(--muted);
+      font-weight:500;
+      transition:.25s;
     }
 
-    h1 {
-      font-size: clamp(40px, 6vw, 68px);
-      line-height: 1.05;
-      margin-bottom: 14px;
-      font-weight: 800;
+    .nav-links a:hover{
+      color:#fff;
     }
 
-    .hero p {
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.8;
-      max-width: 640px;
+    .lang-btn{
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid rgba(56,189,248,.35);
+      background:rgba(34,211,238,.08);
+      color:#bdf6ff;
+      box-shadow:0 0 20px rgba(56,189,248,.15);
+      font-weight:600;
     }
 
-    .typing {
-      color: #bfefff;
-      font-weight: 600;
+    .hero{
+      padding:60px 0 30px;
     }
 
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 28px;
+    .hero-box{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:28px;
+      align-items:center;
     }
 
-    .btn {
-      padding: 14px 22px;
-      border-radius: 14px;
-      border: 1px solid transparent;
-      font-weight: 600;
-      transition: 0.25s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: var(--shadow);
+    .badge{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 16px;
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--border);
+      color:#c8f6ff;
+      margin-bottom:18px;
+      box-shadow:0 0 22px rgba(56,189,248,.08);
     }
 
-    .btn-primary {
-      background: linear-gradient(45deg, var(--accent), #0d8bff);
-      color: white;
+    h1{
+      font-size:clamp(42px,7vw,72px);
+      line-height:1.03;
+      margin-bottom:12px;
+      font-weight:800;
     }
 
-    .btn-primary:hover {
-      transform: translateY(-3px);
+    .gradient-text{
+      background:linear-gradient(45deg,#dff8ff,var(--blue),var(--purple),#f4b7ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
 
-    .btn-secondary {
-      background: rgba(255,255,255,0.06);
-      border-color: var(--border);
-      color: white;
+    .hero p{
+      font-size:18px;
+      line-height:1.9;
+      color:var(--muted);
+      max-width:650px;
     }
 
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.1);
-      transform: translateY(-3px);
+    .typing{
+      color:#b9f7ff;
+      font-weight:700;
     }
 
-    .hero-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 28px;
-      backdrop-filter: blur(18px);
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
+    .hero-buttons{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:28px;
     }
 
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: rgba(31,182,255,0.18);
-      top: -50px;
-      right: -40px;
-      filter: blur(20px);
+    .btn{
+      padding:14px 22px;
+      border-radius:16px;
+      font-weight:700;
+      border:1px solid transparent;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition:.25s ease;
+      box-shadow:var(--shadow);
     }
 
-    .avatar {
-      width: 118px;
-      height: 118px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid rgba(255,255,255,0.7);
-      margin-bottom: 18px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-      background: #0c2735;
+    .btn-primary{
+      background:linear-gradient(45deg,var(--cyan),var(--blue),#1678ff);
+      color:white;
     }
 
-    .mini-title {
-      color: #dff7ff;
-      font-size: 14px;
-      margin-bottom: 8px;
+    .btn-primary:hover{
+      transform:translateY(-4px) scale(1.02);
     }
 
-    .mini-name {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 8px;
+    .btn-secondary{
+      background:rgba(255,255,255,.06);
+      border-color:var(--border);
+      color:white;
     }
 
-    .mini-desc {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.7;
-      margin-bottom: 18px;
+    .btn-secondary:hover{
+      transform:translateY(-4px);
+      background:rgba(255,255,255,.1);
     }
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 18px;
+    .hero-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:30px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(14px);
+      position:relative;
+      overflow:hidden;
     }
 
-    .stat {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 16px;
-      text-align: center;
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      width:200px;
+      height:200px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(34,211,238,.25), transparent 60%);
+      top:-60px;
+      right:-30px;
+      filter:blur(6px);
     }
 
-    .stat h3 {
-      font-size: 24px;
-      margin-bottom: 6px;
+    .profile-ring{
+      width:148px;
+      height:148px;
+      border-radius:50%;
+      padding:4px;
+      background:linear-gradient(45deg,var(--cyan),var(--blue),var(--purple),var(--pink));
+      margin-bottom:18px;
+      box-shadow:0 0 35px rgba(56,189,248,.2);
     }
 
-    .stat p {
-      font-size: 13px;
-      color: var(--muted);
+    .profile-ring img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+      background:#07192a;
+      display:block;
     }
 
-    section {
-      padding: 28px 0 70px;
+    .mini-role{
+      color:#c8f7ff;
+      font-size:14px;
+      margin-bottom:8px;
     }
 
-    .section-title {
-      font-size: 34px;
-      margin-bottom: 12px;
-      font-weight: 800;
+    .mini-name{
+      font-size:28px;
+      font-weight:800;
+      margin-bottom:8px;
     }
 
-    .section-sub {
-      color: var(--muted);
-      margin-bottom: 28px;
-      line-height: 1.8;
+    .mini-desc{
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.8;
+      margin-bottom:18px;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
     }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 24px;
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow);
-      transition: 0.3s ease;
+    .stat{
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:16px 10px;
+      text-align:center;
     }
 
-    .card:hover {
-      transform: translateY(-7px);
+    .stat h3{
+      font-size:24px;
+      margin-bottom:4px;
     }
 
-    .card h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
+    .stat p{
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.4;
     }
 
-    .card p, .card li {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 15px;
+    section{
+      padding:34px 0 70px;
+      position:relative;
+      z-index:1;
     }
 
-    .skills-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
+    .section-head{
+      text-align:center;
+      margin-bottom:28px;
     }
 
-    .skill {
-      margin-bottom: 18px;
+    .section-title{
+      font-size:clamp(30px,5vw,46px);
+      font-weight:800;
+      margin-bottom:10px;
     }
 
-    .skill-top {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-      font-size: 14px;
-      color: #e9fbff;
+    .section-line{
+      width:110px;
+      height:5px;
+      border-radius:999px;
+      margin:0 auto 16px;
+      background:linear-gradient(45deg,var(--cyan),var(--purple),var(--pink));
+      box-shadow:0 0 20px rgba(168,85,247,.28);
     }
 
-    .bar {
-      width: 100%;
-      height: 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
+    .section-sub{
+      color:var(--muted);
+      max-width:760px;
+      margin:0 auto;
+      line-height:1.9;
     }
 
-    .fill {
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    .cards-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
     }
 
-    .project-tag {
-      display: inline-block;
-      font-size: 12px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      margin-top: 14px;
-      background: rgba(255,255,255,0.08);
-      color: #d7f7ff;
-      border: 1px solid var(--border);
+    .glass-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:28px;
+      padding:24px;
+      backdrop-filter:blur(14px);
+      box-shadow:var(--shadow);
+      transition:.28s ease;
     }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
+    .glass-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 24px 50px rgba(0,0,0,.4);
     }
 
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid var(--border);
-      margin-bottom: 14px;
+    .glass-card h3{
+      font-size:24px;
+      margin-bottom:10px;
     }
 
-    .contact-item span {
-      font-size: 24px;
+    .glass-card p,
+    .glass-card li{
+      color:var(--muted);
+      line-height:1.85;
+      font-size:15px;
     }
 
-    .footer {
-      padding: 26px 0 40px;
-      color: rgba(255,255,255,0.6);
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.08);
+    .skills-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
     }
 
-    .floating {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 99;
+    .skill{
+      margin-bottom:18px;
     }
 
-    .to-top {
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      border: none;
-      cursor: pointer;
-      font-size: 20px;
-      background: linear-gradient(45deg, var(--accent), #118cff);
-      color: white;
-      box-shadow: var(--shadow);
+    .skill-top{
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:7px;
+      color:#e8fbff;
+      font-size:14px;
+      font-weight:600;
     }
 
-    @media (max-width: 960px) {
-      .hero-grid,
-      .cards,
-      .skills-box,
-      .contact-grid {
-        grid-template-columns: 1fr;
+    .bar{
+      height:12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .fill{
+      height:100%;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--cyan),var(--blue),var(--purple));
+      box-shadow:0 0 20px rgba(56,189,248,.35);
+    }
+
+    .tags{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+
+    .tag{
+      font-size:12px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--border);
+      color:#d7f7ff;
+    }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+    }
+
+    .project-card{
+      overflow:hidden;
+      padding:0;
+    }
+
+    .project-cover{
+      height:230px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:64px;
+      background:
+        radial-gradient(circle at center, rgba(56,189,248,.22), transparent 40%),
+        linear-gradient(135deg, #081426, #11295d);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .project-body{
+      padding:24px;
+    }
+
+    .project-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:12px;
+    }
+
+    .live-badge{
+      font-size:12px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(34,211,238,.1);
+      color:#bff7ff;
+      border:1px solid rgba(34,211,238,.25);
+    }
+
+    .project-btn{
+      margin-top:18px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:12px 18px;
+      border-radius:999px;
+      border:1px solid rgba(34,211,238,.25);
+      color:#bff8ff;
+      background:rgba(34,211,238,.06);
+      font-weight:700;
+      transition:.25s;
+    }
+
+    .project-btn:hover{
+      transform:translateX(4px);
+      background:rgba(34,211,238,.1);
+    }
+
+    .cert-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .cert-card{
+      padding:0;
+      overflow:hidden;
+    }
+
+    .cert-image{
+      height:230px;
+      overflow:hidden;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background:#10213f;
+    }
+
+    .cert-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .cert-body{
+      padding:24px;
+    }
+
+    .cert-year{
+      color:#bdccff;
+      opacity:.75;
+      letter-spacing:1.3px;
+      font-size:13px;
+      margin-bottom:10px;
+      text-transform:uppercase;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .contact-item{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:16px 18px;
+      margin-bottom:14px;
+    }
+
+    .contact-item .icon{
+      font-size:26px;
+    }
+
+    .contact-socials{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:16px;
+    }
+
+    .social-btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:999px;
+      font-weight:700;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.06);
+      transition:.25s;
+    }
+
+    .social-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .telegram{
+      color:#78ecff;
+      border-color:rgba(34,211,238,.25);
+      box-shadow:0 0 18px rgba(34,211,238,.08);
+    }
+
+    .instagram{
+      color:#ffb7dd;
+      border-color:rgba(236,72,153,.25);
+      box-shadow:0 0 18px rgba(236,72,153,.08);
+    }
+
+    .footer{
+      padding:28px 0 44px;
+      text-align:center;
+      color:rgba(255,255,255,.62);
+      border-top:1px solid rgba(255,255,255,.06);
+      position:relative;
+      z-index:1;
+    }
+
+    .to-top{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:99;
+      width:56px;
+      height:56px;
+      border:none;
+      border-radius:50%;
+      cursor:pointer;
+      font-size:22px;
+      color:white;
+      background:linear-gradient(45deg,var(--cyan),var(--blue),var(--purple));
+      box-shadow:var(--shadow);
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(28px);
+      transition:all .7s ease;
+    }
+
+    .reveal.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media (max-width: 980px){
+      .hero-box,
+      .cards-3,
+      .skills-grid,
+      .projects-grid,
+      .cert-grid,
+      .contact-grid{
+        grid-template-columns:1fr;
       }
 
-      .nav-wrap {
-        flex-direction: column;
-        gap: 14px;
+      .nav-wrap{
+        flex-direction:column;
       }
 
-      .stats {
-        grid-template-columns: 1fr;
+      .stats{
+        grid-template-columns:1fr;
       }
 
-      .hero {
-        padding-top: 40px;
+      .hero{
+        padding-top:36px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .nav-links{
+        justify-content:center;
       }
 
-      h1 {
-        font-size: 42px;
+      .hero-buttons{
+        flex-direction:column;
+      }
+
+      .btn{
+        justify-content:center;
+      }
+
+      .project-cover,
+      .cert-image{
+        height:210px;
       }
     }
   </style>
 </head>
 <body>
 
+  <div class="floating-code">
+    <span style="left:6%; top:18%; font-size:54px; animation-duration:8s;">0x</span>
+    <span style="left:80%; top:16%; font-size:60px; animation-duration:9s;">HTTP</span>
+    <span style="left:75%; top:32%; font-size:48px; animation-duration:7s;">UDP</span>
+    <span style="left:11%; top:72%; font-size:40px; animation-duration:8s;">npm</span>
+    <span style="left:18%; top:85%; font-size:52px; animation-duration:11s;">fn()</span>
+    <span style="left:80%; top:80%; font-size:56px; animation-duration:10s;">TCP</span>
+    <span style="left:62%; top:84%; font-size:60px; animation-duration:9s;">&lt;/&gt;</span>
+    <span style="left:30%; top:76%; font-size:58px; animation-duration:10s;">CSS</span>
+    <span style="left:7%; top:58%; font-size:44px; animation-duration:8s;">API</span>
+    <span style="left:82%; top:62%; font-size:52px; animation-duration:8s;">git</span>
+  </div>
+
   <nav class="navbar">
     <div class="container nav-wrap">
-      <div class="logo">Yusufjon<span>.dev</span></div>
+      <div class="logo">Yusufjon<span>.portfolio</span></div>
       <div class="nav-links">
         <a href="#about">Men haqimda</a>
         <a href="#skills">Ko‘nikmalar</a>
         <a href="#projects">Loyihalar</a>
+        <a href="#certificates">Sertifikatlar</a>
         <a href="#contact">Kontakt</a>
+        <button class="lang-btn">UZ ▼</button>
       </div>
     </div>
   </nav>
 
   <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="badge">🚀 Portfolio Website</div>
-        <h1>Salom, men Yusufjon</h1>
+    <div class="container hero-box">
+      <div class="reveal">
+        <div class="badge">🚀 Premium Portfolio Website</div>
+        <h1>
+          Salom, men <span class="gradient-text">Yusufjon</span>
+        </h1>
         <p>
-          Men dasturlashni o‘rganayotgan va AI bilan ishlayotgan yosh developer-man.
-          Hozir <span class="typing" id="typingText">HTML, CSS va portfolio saytlar</span> ustida ishlayapman.
+          Men web dasturlash va sun’iy intellekt yo‘nalishiga qiziqaman.
+          Hozir <span class="typing" id="typingText">zamonaviy portfolio va web sahifalar</span>
+          ustida ishlayapman.
         </p>
 
         <div class="hero-buttons">
@@ -447,27 +720,25 @@
         </div>
       </div>
 
-      <div class="hero-card">
-        <img
-          class="avatar"
-          src="https://i.imgur.com/8Km9tLL.png"
-          alt="Avatar"
-        />
-        <div class="mini-title">Frontend / AI Enthusiast</div>
+      <div class="hero-card reveal">
+        <div class="profile-ring">
+          <img src="https://i.imgur.com/8Km9tLL.png" alt="Profile">
+        </div>
+        <div class="mini-role">Frontend Developer | AI Enthusiast</div>
         <div class="mini-name">Yusufjon</div>
         <div class="mini-desc">
-          Portfolio, web sahifalar, AI loyihalar va oddiydan professionalgacha
-          bo‘lgan UI dizaynlar ustida ishlayman.
+          Chiroyli, premium va foydali web sahifalar yaratishni yoqtiraman.
+          Oddiy g‘oyani zamonaviy va professional ko‘rinishga olib chiqishga harakat qilaman.
         </div>
 
         <div class="stats">
           <div class="stat">
             <h3>3+</h3>
-            <p>Loyiha</p>
+            <p>Loyihalar</p>
           </div>
           <div class="stat">
             <h3>5+</h3>
-            <p>Ko‘nikma</p>
+            <p>Ko‘nikmalar</p>
           </div>
           <div class="stat">
             <h3>100%</h3>
@@ -480,24 +751,27 @@
 
   <section id="about">
     <div class="container">
-      <h2 class="section-title">Men haqimda</h2>
-      <p class="section-sub">
-        Men IT va sun’iy intellekt yo‘nalishiga qiziqaman. Oddiy g‘oyalarni chiroyli
-        sayt, foydali loyiha va zamonaviy interfeysga aylantirishni yoqtiraman.
-      </p>
+      <div class="section-head reveal">
+        <h2 class="section-title gradient-text">O‘zim haqimda</h2>
+        <div class="section-line"></div>
+        <p class="section-sub">
+          Men IT sohasiga qiziqadigan, web development va AI yo‘nalishida o‘sishni istaydigan yosh dasturchiman.
+          Sayt dizayni, portfolio, foydali loyihalar va zamonaviy interfeyslar meni qiziqtiradi.
+        </p>
+      </div>
 
-      <div class="cards">
-        <div class="card">
+      <div class="cards-3">
+        <div class="glass-card reveal">
           <h3>🎯 Maqsadim</h3>
-          <p>Kuchli dasturchi bo‘lish va foydali, zamonaviy loyihalar yaratish.</p>
+          <p>Kuchli IT mutaxassis bo‘lish, foydali servislar yaratish va real loyihalarda ishlash.</p>
         </div>
-        <div class="card">
+        <div class="glass-card reveal">
           <h3>🧠 Qiziqishlarim</h3>
-          <p>Web development, AI tools, dizayn, mobil ilova g‘oyalari.</p>
+          <p>Frontend, AI tools, portfolio website, mobil ilova g‘oyalari va chiroyli UI dizaynlar.</p>
         </div>
-        <div class="card">
+        <div class="glass-card reveal">
           <h3>⚡ Uslubim</h3>
-          <p>Sodda, chiroyli, tushunarli va zamonaviy dizaynli loyihalarni yaxshi ko‘raman.</p>
+          <p>Sodda emas, balki ko‘zni tortadigan, professional va premium ko‘rinishdagi web sahifalar.</p>
         </div>
       </div>
     </div>
@@ -505,41 +779,49 @@
 
   <section id="skills">
     <div class="container">
-      <h2 class="section-title">Ko‘nikmalarim</h2>
-      <p class="section-sub">
-        Hozir o‘rganayotgan va ishlatayotgan asosiy texnologiyalarim.
-      </p>
+      <div class="section-head reveal">
+        <h2 class="section-title gradient-text">Ko‘nikmalarim</h2>
+        <div class="section-line"></div>
+        <p class="section-sub">
+          Hozir o‘rganayotgan va ishlatayotgan asosiy texnologiyalarim.
+        </p>
+      </div>
 
-      <div class="skills-box">
-        <div class="card">
+      <div class="skills-grid">
+        <div class="glass-card reveal">
           <div class="skill">
-            <div class="skill-top"><span>HTML</span><span>85%</span></div>
-            <div class="bar"><div class="fill" style="width:85%"></div></div>
+            <div class="skill-top"><span>HTML</span><span>88%</span></div>
+            <div class="bar"><div class="fill" style="width:88%"></div></div>
           </div>
 
           <div class="skill">
-            <div class="skill-top"><span>CSS</span><span>80%</span></div>
-            <div class="bar"><div class="fill" style="width:80%"></div></div>
+            <div class="skill-top"><span>CSS</span><span>84%</span></div>
+            <div class="bar"><div class="fill" style="width:84%"></div></div>
           </div>
 
           <div class="skill">
-            <div class="skill-top"><span>JavaScript</span><span>55%</span></div>
-            <div class="bar"><div class="fill" style="width:55%"></div></div>
+            <div class="skill-top"><span>JavaScript</span><span>60%</span></div>
+            <div class="bar"><div class="fill" style="width:60%"></div></div>
           </div>
 
           <div class="skill">
-            <div class="skill-top"><span>Python</span><span>65%</span></div>
-            <div class="bar"><div class="fill" style="width:65%"></div></div>
+            <div class="skill-top"><span>Python</span><span>68%</span></div>
+            <div class="bar"><div class="fill" style="width:68%"></div></div>
           </div>
         </div>
 
-        <div class="card">
-          <h3>🛠 Ishlay olaman</h3>
-          <p>Responsive sahifalar, portfolio website, basic UI dizayn, GitHub Pages, AI promptlar.</p>
-          <div class="project-tag">Frontend</div>
-          <div class="project-tag">Portfolio</div>
-          <div class="project-tag">AI Tools</div>
-          <div class="project-tag">GitHub</div>
+        <div class="glass-card reveal">
+          <h3>🛠 Men ishlata olaman</h3>
+          <p>
+            Portfolio website, responsive sahifalar, GitHub Pages, loyiha taqdimoti, AI promptlar va basic web UI.
+          </p>
+          <div class="tags">
+            <span class="tag">Frontend</span>
+            <span class="tag">Portfolio</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">AI Tools</span>
+            <span class="tag">Responsive</span>
+          </div>
         </div>
       </div>
     </div>
@@ -547,28 +829,81 @@
 
   <section id="projects">
     <div class="container">
-      <h2 class="section-title">Loyihalarim</h2>
-      <p class="section-sub">
-        Men qilgan yoki ustida ishlayotgan asosiy loyihalar.
-      </p>
+      <div class="section-head reveal">
+        <h2 class="section-title gradient-text">Mening loyihalarim</h2>
+        <div class="section-line"></div>
+        <p class="section-sub">
+          Men qilgan yoki ustida ishlayotgan asosiy loyihalar.
+        </p>
+      </div>
 
-      <div class="cards">
-        <div class="card">
-          <h3>💼 Smart Service Finder</h3>
-          <p>Foydalanuvchilar uchun xizmat topishga yordam beradigan zamonaviy loyiha g‘oyasi.</p>
-          <div class="project-tag">Web App</div>
+      <div class="projects-grid">
+        <div class="glass-card project-card reveal">
+          <div class="project-cover">☁️</div>
+          <div class="project-body">
+            <div class="project-top">
+              <h3>O‘zbekiston Ob-havosi</h3>
+              <span class="live-badge">LIVE</span>
+            </div>
+            <p>
+              OpenWeatherMap API yordamida yaratilgan, viloyatlar bo‘yicha real vaqtda ob-havo ma’lumotlarini ko‘rsatuvchi loyiha.
+            </p>
+            <a class="project-btn" href="#">Loyihani ko‘rish →</a>
+          </div>
         </div>
 
-        <div class="card">
-          <h3>🎬 AI Video Generator</h3>
-          <p>Prompt orqali video va media kontent yaratishga yo‘naltirilgan loyiha.</p>
-          <div class="project-tag">AI Project</div>
+        <div class="glass-card project-card reveal">
+          <div class="project-cover">💼</div>
+          <div class="project-body">
+            <div class="project-top">
+              <h3>Smart Service Finder</h3>
+              <span class="live-badge">NEW</span>
+            </div>
+            <p>
+              Foydalanuvchilar uchun turli xizmatlarni topishga yordam beradigan zamonaviy web loyiha g‘oyasi.
+            </p>
+            <a class="project-btn" href="#">Loyihani ko‘rish →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certificates">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title gradient-text">Sertifikatlarim</h2>
+        <div class="section-line"></div>
+        <p class="section-sub">
+          O‘qish va rivojlanish jarayonimdagi muhim natijalar.
+        </p>
+      </div>
+
+      <div class="cert-grid">
+        <div class="glass-card cert-card reveal">
+          <div class="cert-image">
+            <img src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?auto=format&fit=crop&w=1200&q=80" alt="Certificate">
+          </div>
+          <div class="cert-body">
+            <div class="cert-year">UAE & O‘zbekiston Hukumati • 2026</div>
+            <h3>Five Million AI Leaders</h3>
+            <p>
+              Sun’iy intellekt tizimlarida prompt muhandisligi va zamonaviy AI yo‘nalishlarini o‘rganishga qaratilgan xalqaro dastur.
+            </p>
+          </div>
         </div>
 
-        <div class="card">
-          <h3>🧩 Matritsa o‘yini</h3>
-          <p>Mantiqiy va foydali kichik o‘yin loyihasi, foydalanuvchi bilan interaktiv ishlaydi.</p>
-          <div class="project-tag">Game Logic</div>
+        <div class="glass-card cert-card reveal">
+          <div class="cert-image">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Certificate">
+          </div>
+          <div class="cert-body">
+            <div class="cert-year">Respublika Tanlovi • 2024</div>
+            <h3>Mirzo Ulug‘bek Vorislari</h3>
+            <p>
+              Innovatsion g‘oyalar va texnologik ishlanmalar bo‘yicha tanlovda ro‘yxatdan o‘tish va faol ishtirok etish uchun berilgan sertifikat.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -576,15 +911,18 @@
 
   <section id="contact">
     <div class="container">
-      <h2 class="section-title">Bog‘lanish</h2>
-      <p class="section-sub">
-        Men bilan bog‘lanish uchun quyidagi ma’lumotlardan foydalaning.
-      </p>
+      <div class="section-head reveal">
+        <h2 class="section-title gradient-text">Bog‘lanish</h2>
+        <div class="section-line"></div>
+        <p class="section-sub">
+          Men bilan quyidagi platformalar orqali bog‘lanishingiz mumkin.
+        </p>
+      </div>
 
       <div class="contact-grid">
-        <div class="card">
+        <div class="glass-card reveal">
           <div class="contact-item">
-            <span>📱</span>
+            <div class="icon">📱</div>
             <div>
               <strong>Telegram</strong><br>
               @username
@@ -592,7 +930,7 @@
           </div>
 
           <div class="contact-item">
-            <span>💻</span>
+            <div class="icon">💻</div>
             <div>
               <strong>GitHub</strong><br>
               muhammadiyevyusufjon72-hash
@@ -600,7 +938,7 @@
           </div>
 
           <div class="contact-item">
-            <span>📧</span>
+            <div class="icon">📧</div>
             <div>
               <strong>Email</strong><br>
               example@gmail.com
@@ -608,15 +946,15 @@
           </div>
         </div>
 
-        <div class="card">
-          <h3>🚀 Tez havolalar</h3>
-          <p style="margin-bottom: 16px;">
-            Quyidagi tugmalar orqali tezda bog‘lanishingiz mumkin.
+        <div class="glass-card reveal">
+          <h3>🚀 Tez bog‘lanish</h3>
+          <p style="color:var(--muted); line-height:1.8; margin-top:10px;">
+            Quyidagi tugmalar orqali profil va ijtimoiy tarmoqlarga o‘tish mumkin.
           </p>
 
-          <div class="hero-buttons">
-            <a href="https://t.me/username" target="_blank" class="btn btn-primary">Telegram</a>
-            <a href="https://github.com/muhammadiyevyusufjon72-hash" target="_blank" class="btn btn-secondary">GitHub</a>
+          <div class="contact-socials">
+            <a class="social-btn telegram" href="https://t.me/username" target="_blank">✈ Telegram</a>
+            <a class="social-btn instagram" href="https://instagram.com/" target="_blank">📷 Instagram</a>
           </div>
         </div>
       </div>
@@ -624,18 +962,16 @@
   </section>
 
   <div class="footer">
-    © 2026 Yusufjon Portfolio. Barcha huquqlar himoyalangan.
+    © 2026 — <span class="gradient-text">Yusufjon</span> tomonidan yaratilgan.
   </div>
 
-  <div class="floating">
-    <button class="to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
-  </div>
+  <button class="to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
 
   <script>
     const words = [
-      "HTML, CSS va portfolio saytlar",
-      "AI tools va zamonaviy interfeyslar",
-      "GitHub Pages va web loyihalar"
+      "zamonaviy portfolio va web sahifalar",
+      "AI tools va foydali interfeyslar",
+      "GitHub Pages va premium dizaynlar"
     ];
 
     let i = 0;
@@ -645,6 +981,20 @@
       i = (i + 1) % words.length;
       typingText.textContent = words[i];
     }, 2200);
+
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+      reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 80) {
+          el.classList.add('show');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
   </script>
 </body>
 </html>
