@@ -3,25 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yusufjon Portfolio</title>
+  <title>Muxammadiyev Yusufjon</title>
+  <meta name="description" content="Muhammadiyev Yusufjon Siddiq o‘g‘li premium portfolio website" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg1:#03111f;
-      --bg2:#071d33;
-      --bg3:#0d2b4a;
-      --card:rgba(14, 30, 55, 0.82);
-      --border:rgba(112, 196, 255, 0.16);
-      --text:#f5fbff;
-      --muted:rgba(220,240,255,0.78);
+      --bg-1:#03111f;
+      --bg-2:#071d33;
+      --bg-3:#0d2b4a;
+      --card:rgba(14,30,55,.78);
+      --card-2:rgba(18,36,63,.88);
+      --text:#f4fbff;
+      --muted:rgba(225,240,255,.76);
+      --line:rgba(255,255,255,.09);
       --cyan:#22d3ee;
       --blue:#38bdf8;
       --purple:#a855f7;
       --pink:#ec4899;
-      --shadow:0 20px 50px rgba(0,0,0,.35);
+      --green:#10b981;
+      --yellow:#f59e0b;
+      --shadow:0 18px 50px rgba(0,0,0,.35);
+      --radius:28px;
+      --radius-md:20px;
+      --radius-sm:16px;
+      --max:1180px;
     }
 
     *{
@@ -39,10 +47,10 @@
       font-family:'Poppins',sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at 20% 20%, rgba(56,189,248,.12), transparent 18%),
-        radial-gradient(circle at 80% 15%, rgba(168,85,247,.10), transparent 18%),
-        radial-gradient(circle at 50% 80%, rgba(34,211,238,.08), transparent 22%),
-        linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+        radial-gradient(circle at 15% 20%, rgba(34,211,238,.10), transparent 20%),
+        radial-gradient(circle at 85% 15%, rgba(168,85,247,.12), transparent 24%),
+        radial-gradient(circle at 50% 85%, rgba(236,72,153,.08), transparent 22%),
+        linear-gradient(135deg,var(--bg-1),var(--bg-2),var(--bg-3));
       min-height:100vh;
       position:relative;
     }
@@ -52,95 +60,11 @@
       position:fixed;
       inset:0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size:40px 40px;
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size:42px 42px;
       pointer-events:none;
       z-index:0;
-    }
-
-    .loading-screen{
-      position:fixed;
-      inset:0;
-      background:linear-gradient(135deg,#03111f,#071d33,#0d2b4a);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-direction:column;
-      z-index:9999;
-      transition:opacity .7s ease, visibility .7s ease;
-    }
-
-    .loading-screen.hidden{
-      opacity:0;
-      visibility:hidden;
-      pointer-events:none;
-    }
-
-    .loader-ring{
-      width:120px;
-      height:120px;
-      border-radius:50%;
-      padding:4px;
-      background:linear-gradient(45deg,#22d3ee,#38bdf8,#a855f7,#ec4899,#22d3ee);
-      background-size:300% 300%;
-      animation:loaderMove 2s linear infinite, spin 2s linear infinite;
-      box-shadow:0 0 30px rgba(56,189,248,.25);
-      margin-bottom:20px;
-    }
-
-    .loader-inner{
-      width:100%;
-      height:100%;
-      border-radius:50%;
-      background:#07192a;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-    }
-
-    .loader-inner img{
-      width:72px;
-      height:72px;
-      object-fit:contain;
-      border-radius:50%;
-      background:white;
-      padding:8px;
-    }
-
-    .loading-text{
-      font-size:28px;
-      font-weight:800;
-      letter-spacing:.5px;
-      background:linear-gradient(45deg,#dff8ff,#38bdf8,#a855f7,#f4b7ff);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      animation:textGlow 1.6s ease-in-out infinite alternate;
-      text-align:center;
-    }
-
-    .loading-subtext{
-      margin-top:8px;
-      color:rgba(255,255,255,.72);
-      font-size:14px;
-      text-align:center;
-    }
-
-    @keyframes loaderMove{
-      0%{background-position:0% 50%;}
-      50%{background-position:100% 50%;}
-      100%{background-position:0% 50%;}
-    }
-
-    @keyframes spin{
-      from{transform:rotate(0deg);}
-      to{transform:rotate(360deg);}
-    }
-
-    @keyframes textGlow{
-      0%{filter:drop-shadow(0 0 8px rgba(56,189,248,.20));}
-      100%{filter:drop-shadow(0 0 16px rgba(168,85,247,.28));}
     }
 
     .cursor-glow{
@@ -148,10 +72,10 @@
       width:260px;
       height:260px;
       border-radius:50%;
-      background:radial-gradient(circle, rgba(34,211,238,0.10), rgba(168,85,247,0.06), transparent 70%);
+      background:radial-gradient(circle, rgba(34,211,238,.10), rgba(168,85,247,.05), transparent 70%);
+      transform:translate(-50%,-50%);
       pointer-events:none;
       z-index:0;
-      transform:translate(-50%,-50%);
       filter:blur(10px);
     }
 
@@ -165,15 +89,15 @@
 
     .floating-icons span{
       position:absolute;
-      bottom:-100px;
+      bottom:-120px;
       font-size:42px;
-      opacity:0.14;
-      filter:drop-shadow(0 0 10px rgba(56,189,248,.18));
-      animation:floatIcons linear infinite;
+      opacity:.13;
+      animation:floatUp linear infinite;
       user-select:none;
+      filter:drop-shadow(0 0 12px rgba(56,189,248,.18));
     }
 
-    @keyframes floatIcons{
+    @keyframes floatUp{
       0%{
         transform:translateY(0) rotate(0deg) scale(.8);
         opacity:0;
@@ -186,99 +110,311 @@
       }
     }
 
+    .bg-words{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .bg-words span{
+      position:absolute;
+      color:rgba(115,170,255,.11);
+      font-size:64px;
+      font-weight:800;
+      user-select:none;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      animation:floatWord 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatWord{
+      from{transform:translateY(0px);}
+      to{transform:translateY(-18px);}
+    }
+
+    .container{
+      width:min(var(--max), 92%);
+      margin:0 auto;
+      position:relative;
+      z-index:1;
+    }
+
     a{
       color:inherit;
       text-decoration:none;
     }
 
-    .container,
-    .navbar,
-    .hero,
-    section,
-    .footer{
-      position:relative;
-      z-index:1;
+    img{
+      max-width:100%;
+      display:block;
     }
 
-    .container{
-      width:min(1120px,92%);
-      margin:0 auto;
+    /* loading */
+    .loading-screen{
+      position:fixed;
+      inset:0;
+      z-index:9999;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      background:linear-gradient(135deg,#03111f,#071d33,#0d2b4a);
+      transition:opacity .7s ease, visibility .7s ease;
     }
 
+    .loading-screen.hidden{
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+    }
+
+    .loader-ring{
+      width:126px;
+      height:126px;
+      border-radius:50%;
+      padding:4px;
+      background:linear-gradient(45deg,var(--cyan),var(--blue),var(--purple),var(--pink),var(--cyan));
+      background-size:300% 300%;
+      animation:gradientMove 2.6s linear infinite, spin 2.3s linear infinite;
+      box-shadow:
+        0 0 24px rgba(56,189,248,.25),
+        0 0 50px rgba(168,85,247,.18);
+      margin-bottom:22px;
+    }
+
+    .loader-inner{
+      width:100%;
+      height:100%;
+      border-radius:50%;
+      background:#081827;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+
+    .loader-inner img{
+      width:74px;
+      height:74px;
+      object-fit:contain;
+      border-radius:50%;
+      background:#fff;
+      padding:8px;
+    }
+
+    .loading-title{
+      font-size:30px;
+      font-weight:800;
+      letter-spacing:.4px;
+      background:linear-gradient(45deg,#dff8ff,var(--blue),var(--purple),#f5b5ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      text-align:center;
+      animation:textGlow 1.5s ease-in-out infinite alternate;
+    }
+
+    .loading-sub{
+      margin-top:8px;
+      color:rgba(255,255,255,.72);
+      font-size:14px;
+      text-align:center;
+    }
+
+    @keyframes textGlow{
+      from{filter:drop-shadow(0 0 8px rgba(56,189,248,.18));}
+      to{filter:drop-shadow(0 0 16px rgba(168,85,247,.26));}
+    }
+
+    @keyframes gradientMove{
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+
+    @keyframes spin{
+      from{transform:rotate(0deg);}
+      to{transform:rotate(360deg);}
+    }
+
+    /* navbar */
     .navbar{
       position:sticky;
       top:0;
       z-index:100;
-      background:rgba(3,17,31,.65);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,255,255,.06);
+      background:rgba(3,17,31,.64);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.05);
     }
 
     .nav-wrap{
       display:flex;
-      justify-content:space-between;
       align-items:center;
-      padding:16px 0;
+      justify-content:space-between;
       gap:20px;
+      padding:16px 0;
     }
 
     .logo{
-      font-size:24px;
+      font-size:26px;
       font-weight:800;
+      letter-spacing:.4px;
+      white-space:nowrap;
     }
 
     .logo span{
-      background:linear-gradient(45deg,#22d3ee,#a855f7,#ec4899);
+      background:linear-gradient(45deg,var(--cyan),var(--purple),var(--pink));
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
     }
 
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
     .nav-links{
       display:flex;
+      align-items:center;
       gap:18px;
       flex-wrap:wrap;
-      align-items:center;
+      justify-content:center;
     }
 
     .nav-links a{
-      color:rgba(255,255,255,.75);
-      transition:.25s;
+      color:rgba(255,255,255,.78);
       font-weight:500;
+      transition:.25s;
     }
 
     .nav-links a:hover{
+      color:#fff;
+      text-shadow:0 0 14px rgba(56,189,248,.18);
+    }
+
+    .lang-switch{
+      position:relative;
+    }
+
+    .lang-btn{
+      padding:10px 15px;
+      border-radius:999px;
+      border:1px solid rgba(56,189,248,.35);
+      background:rgba(34,211,238,.08);
+      color:#c8f8ff;
+      cursor:pointer;
+      font-weight:700;
+      min-width:82px;
+    }
+
+    .lang-menu{
+      position:absolute;
+      right:0;
+      top:52px;
+      min-width:150px;
+      background:rgba(8,22,38,.96);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;
+      padding:8px;
+      box-shadow:var(--shadow);
+      display:none;
+    }
+
+    .lang-menu.show{
+      display:block;
+    }
+
+    .lang-option{
+      width:100%;
+      border:none;
+      background:transparent;
       color:white;
+      padding:10px 12px;
+      border-radius:12px;
+      text-align:left;
+      cursor:pointer;
+      font-family:'Poppins',sans-serif;
     }
 
+    .lang-option:hover{
+      background:rgba(255,255,255,.08);
+    }
+
+    /* common */
+    section{
+      padding:40px 0 80px;
+      position:relative;
+      z-index:1;
+    }
+
+    .section-head{
+      text-align:center;
+      margin-bottom:28px;
+    }
+
+    .section-title{
+      font-size:clamp(32px,5vw,50px);
+      font-weight:800;
+      line-height:1.1;
+      margin-bottom:12px;
+      background:linear-gradient(45deg,#dff8ff,var(--blue),var(--purple),#f4b7ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .section-line{
+      width:110px;
+      height:5px;
+      border-radius:999px;
+      margin:0 auto 16px;
+      background:linear-gradient(45deg,var(--cyan),var(--purple),var(--pink));
+      box-shadow:0 0 16px rgba(168,85,247,.24);
+    }
+
+    .section-sub{
+      max-width:760px;
+      margin:0 auto;
+      color:var(--muted);
+      line-height:1.9;
+      font-size:16px;
+    }
+
+    /* hero */
     .hero{
-      padding:70px 0 40px;
+      padding:72px 0 40px;
     }
 
-    .hero-box{
+    .hero-grid{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
+      grid-template-columns:1.08fr .92fr;
       gap:28px;
       align-items:center;
     }
 
     .badge{
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
       padding:10px 16px;
       border-radius:999px;
       background:rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.10);
       color:#c8f6ff;
       margin-bottom:18px;
+      box-shadow:0 0 22px rgba(56,189,248,.08);
     }
 
-    h1{
-      font-size:clamp(42px,7vw,72px);
-      line-height:1.05;
+    .hero h1{
+      font-size:clamp(44px,7vw,78px);
+      line-height:1.03;
       margin-bottom:14px;
+      font-weight:800;
     }
 
     .gradient-text{
-      background:linear-gradient(45deg,#dff8ff,#38bdf8,#a855f7,#f4b7ff);
+      background:linear-gradient(45deg,#dff8ff,var(--blue),var(--purple),#f3baff);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
     }
@@ -286,11 +422,12 @@
     .hero p{
       font-size:18px;
       line-height:1.9;
-      color:rgba(255,255,255,.75);
+      color:var(--muted);
+      max-width:680px;
     }
 
     .typing{
-      color:#b9f7ff;
+      color:#c7f8ff;
       font-weight:700;
     }
 
@@ -303,30 +440,35 @@
 
     .btn{
       padding:14px 22px;
-      border-radius:16px;
+      border-radius:18px;
       font-weight:700;
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:10px;
-      transition:.25s ease;
       border:1px solid transparent;
+      transition:.25s ease;
       cursor:pointer;
+      box-shadow:var(--shadow);
+      font-family:'Poppins',sans-serif;
     }
 
     .btn-primary{
-      background:linear-gradient(45deg,#22d3ee,#38bdf8,#1678ff);
-      color:white;
+      background:linear-gradient(45deg,var(--cyan),var(--blue),#1678ff);
+      color:#fff;
     }
 
     .btn-primary:hover{
       transform:translateY(-4px);
+      box-shadow:
+        0 0 20px rgba(34,211,238,.34),
+        0 18px 50px rgba(0,0,0,.35);
     }
 
     .btn-secondary{
       background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      color:white;
+      border-color:rgba(255,255,255,.11);
+      color:#fff;
     }
 
     .btn-secondary:hover{
@@ -334,34 +476,35 @@
       background:rgba(255,255,255,.1);
     }
 
-    .hero-card,
-    .glass-card{
-      background:rgba(14,30,55,.80);
+    /* cards */
+    .card,
+    .hero-card{
+      background:var(--card);
       border:1px solid rgba(255,255,255,.08);
-      border-radius:28px;
+      border-radius:var(--radius);
       padding:24px;
       backdrop-filter:blur(14px);
-      box-shadow:0 20px 50px rgba(0,0,0,.35);
+      box-shadow:var(--shadow);
       position:relative;
       overflow:hidden;
       transition:.35s ease;
     }
 
-    .hero-card:hover,
-    .glass-card:hover{
+    .card:hover,
+    .hero-card:hover{
       transform:translateY(-8px);
     }
 
-    .glass-card::before,
+    .card::before,
     .hero-card::before{
       content:"";
       position:absolute;
       inset:0;
-      padding:1.5px;
-      border-radius:28px;
-      background:linear-gradient(45deg,#22d3ee,#38bdf8,#a855f7,#ec4899,#22d3ee);
+      padding:1.4px;
+      border-radius:var(--radius);
+      background:linear-gradient(45deg,var(--cyan),var(--blue),var(--purple),var(--pink),var(--cyan));
       background-size:300% 300%;
-      animation:borderFlow 6s linear infinite;
+      animation:gradientMove 7s linear infinite;
       -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
@@ -371,12 +514,21 @@
       opacity:.9;
     }
 
-    @keyframes borderFlow{
-      0%{background-position:0% 50%;}
-      50%{background-position:100% 50%;}
-      100%{background-position:0% 50%;}
+    .card::after,
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(34,211,238,.14), transparent 60%);
+      top:-60px;
+      right:-55px;
+      filter:blur(10px);
+      pointer-events:none;
     }
 
+    /* profile */
     .profile-top{
       display:flex;
       align-items:center;
@@ -388,13 +540,17 @@
 
     .profile-ring{
       position:relative;
-      width:170px;
-      height:170px;
+      width:178px;
+      height:178px;
       border-radius:50%;
       padding:4px;
-      background:linear-gradient(45deg,#22d3ee,#38bdf8,#a855f7,#ec4899,#22d3ee);
+      background:linear-gradient(45deg,var(--cyan),var(--blue),var(--purple),var(--pink),var(--cyan));
       background-size:300% 300%;
       animation:ringMove 6s linear infinite, pulseGlow 3s ease-in-out infinite;
+      box-shadow:
+        0 0 20px rgba(34,211,238,.35),
+        0 0 40px rgba(168,85,247,.25),
+        0 0 70px rgba(236,72,153,.18);
     }
 
     .profile-ring::before{
@@ -402,31 +558,33 @@
       position:absolute;
       inset:-10px;
       border-radius:50%;
-      background:conic-gradient(from 0deg,#22d3ee,#38bdf8,#a855f7,#ec4899,#22d3ee);
+      background:conic-gradient(from 0deg, var(--cyan), var(--blue), var(--purple), var(--pink), var(--cyan));
       filter:blur(18px);
-      opacity:.7;
+      opacity:.72;
       z-index:-1;
-      animation:spin 6s linear infinite;
+      animation:spin 5.5s linear infinite;
     }
 
     .profile-ring img{
       width:100%;
       height:100%;
-      object-fit:cover;
       border-radius:50%;
-      display:block;
+      object-fit:cover;
       border:3px solid rgba(255,255,255,.18);
-      background:#07192a;
+      background:#081827;
     }
 
     .edu-logo-ring{
-      width:90px;
-      height:90px;
+      width:92px;
+      height:92px;
       border-radius:50%;
       padding:3px;
-      background:linear-gradient(45deg,#ff4d6d,#a855f7,#22d3ee,#ff4d6d);
+      background:linear-gradient(45deg,#ff4d6d,var(--purple),var(--cyan),#ff4d6d);
       background-size:300% 300%;
-      animation:loaderMove 6s linear infinite;
+      animation:gradientMove 6s linear infinite;
+      box-shadow:
+        0 0 18px rgba(255,0,80,.22),
+        0 0 30px rgba(168,85,247,.18);
     }
 
     .edu-logo-ring img{
@@ -435,7 +593,7 @@
       object-fit:contain;
       border-radius:50%;
       display:block;
-      background:white;
+      background:#fff;
       padding:10px;
     }
 
@@ -446,12 +604,22 @@
     }
 
     @keyframes pulseGlow{
-      0%,100%{box-shadow:0 0 20px rgba(34,211,238,.35),0 0 40px rgba(168,85,247,.22);}
-      50%{box-shadow:0 0 30px rgba(34,211,238,.55),0 0 60px rgba(236,72,153,.28);}
+      0%,100%{
+        box-shadow:
+          0 0 20px rgba(34,211,238,.35),
+          0 0 40px rgba(168,85,247,.25),
+          0 0 70px rgba(236,72,153,.18);
+      }
+      50%{
+        box-shadow:
+          0 0 30px rgba(34,211,238,.52),
+          0 0 60px rgba(168,85,247,.38),
+          0 0 90px rgba(236,72,153,.28);
+      }
     }
 
     .study-badge{
-      margin:10px auto 18px;
+      margin:12px auto 18px;
       display:inline-block;
       padding:10px 18px;
       border-radius:999px;
@@ -459,6 +627,7 @@
       border:1px solid rgba(255,255,255,.12);
       color:#fff;
       font-size:14px;
+      text-align:center;
     }
 
     .mini-role{
@@ -469,16 +638,17 @@
     }
 
     .mini-name{
-      font-size:28px;
+      font-size:30px;
       font-weight:800;
       margin-bottom:8px;
       text-align:center;
+      line-height:1.25;
     }
 
     .mini-desc{
-      color:rgba(255,255,255,.75);
+      color:var(--muted);
       font-size:15px;
-      line-height:1.8;
+      line-height:1.85;
       margin-bottom:18px;
       text-align:center;
     }
@@ -497,39 +667,17 @@
       text-align:center;
     }
 
-    section{
-      padding:34px 0 70px;
+    .stat h3{
+      font-size:28px;
+      margin-bottom:4px;
     }
 
-    .section-head{
-      text-align:center;
-      margin-bottom:28px;
+    .stat p{
+      color:var(--muted);
+      font-size:13px;
     }
 
-    .section-title{
-      font-size:clamp(30px,5vw,46px);
-      font-weight:800;
-      margin-bottom:10px;
-      background:linear-gradient(45deg,#dff8ff,#38bdf8,#a855f7,#f4b7ff);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .section-line{
-      width:110px;
-      height:5px;
-      border-radius:999px;
-      margin:0 auto 16px;
-      background:linear-gradient(45deg,#22d3ee,#a855f7,#ec4899);
-    }
-
-    .section-sub{
-      color:rgba(255,255,255,.75);
-      max-width:760px;
-      margin:0 auto;
-      line-height:1.9;
-    }
-
+    /* grids */
     .cards-3,
     .skills-grid,
     .projects-grid,
@@ -545,6 +693,18 @@
     .cert-grid{grid-template-columns:repeat(3,1fr);}
     .contact-grid{grid-template-columns:1fr 1fr;}
 
+    .card h3{
+      font-size:24px;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      color:var(--muted);
+      line-height:1.85;
+      font-size:15px;
+    }
+
+    /* skills */
     .skill{
       margin-bottom:18px;
     }
@@ -552,6 +712,7 @@
     .skill-top{
       display:flex;
       justify-content:space-between;
+      gap:10px;
       margin-bottom:7px;
       color:#e8fbff;
       font-size:14px;
@@ -569,9 +730,12 @@
     .fill{
       height:100%;
       border-radius:999px;
-      background:linear-gradient(90deg,#22d3ee,#38bdf8,#a855f7);
+      background:linear-gradient(90deg,var(--cyan),var(--blue),var(--purple));
       width:0;
-      transition:width 1.6s ease;
+      transition:width 1.7s ease;
+      box-shadow:
+        0 0 12px rgba(34,211,238,.25),
+        0 0 18px rgba(168,85,247,.18);
     }
 
     .tags{
@@ -590,6 +754,7 @@
       color:#d7f7ff;
     }
 
+    /* filter */
     .filter-buttons{
       display:flex;
       gap:10px;
@@ -606,14 +771,24 @@
       color:white;
       cursor:pointer;
       font-family:'Poppins',sans-serif;
+      transition:.25s;
+    }
+
+    .filter-btn:hover{
+      background:rgba(255,255,255,.10);
     }
 
     .filter-btn.active{
-      background:linear-gradient(45deg,#22d3ee,#38bdf8,#1678ff);
+      background:linear-gradient(45deg,var(--cyan),var(--blue),#1678ff);
+      border-color:transparent;
     }
 
     .project-card.hidden{
       display:none;
+    }
+
+    .project-card{
+      padding:0;
     }
 
     .project-cover{
@@ -628,8 +803,7 @@
       border-bottom:1px solid rgba(255,255,255,.06);
     }
 
-    .project-body,
-    .cert-body{
+    .project-body{
       padding:24px;
     }
 
@@ -648,6 +822,7 @@
       background:rgba(34,211,238,.1);
       color:#bff7ff;
       border:1px solid rgba(34,211,238,.25);
+      white-space:nowrap;
     }
 
     .project-btn{
@@ -662,13 +837,14 @@
       background:rgba(34,211,238,.06);
       font-weight:700;
       transition:.25s;
-      cursor:pointer;
     }
 
     .project-btn:hover{
       transform:translateX(4px);
+      background:rgba(34,211,238,.10);
     }
 
+    /* timeline */
     .timeline{
       position:relative;
       max-width:900px;
@@ -683,7 +859,7 @@
       top:0;
       bottom:0;
       width:3px;
-      background:linear-gradient(180deg,#22d3ee,#a855f7,#ec4899);
+      background:linear-gradient(180deg,var(--cyan),var(--purple),var(--pink));
       border-radius:999px;
     }
 
@@ -700,17 +876,22 @@
       width:18px;
       height:18px;
       border-radius:50%;
-      background:linear-gradient(45deg,#22d3ee,#a855f7);
+      background:linear-gradient(45deg,var(--cyan),var(--purple));
       box-shadow:0 0 16px rgba(34,211,238,.35);
     }
 
     .timeline-card{
       background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.10);
       border-radius:18px;
       padding:16px;
     }
 
+    .timeline-card h3{
+      margin-bottom:8px;
+    }
+
+    /* cert */
     .cert-card{
       padding:0;
       overflow:hidden;
@@ -728,7 +909,15 @@
       width:100%;
       height:100%;
       object-fit:cover;
-      display:block;
+      transition:.35s ease;
+    }
+
+    .cert-card:hover .cert-image img{
+      transform:scale(1.04);
+    }
+
+    .cert-body{
+      padding:22px;
     }
 
     .cert-year{
@@ -740,6 +929,21 @@
       text-transform:uppercase;
     }
 
+    .verified{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      margin-top:14px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(16,185,129,.10);
+      border:1px solid rgba(16,185,129,.26);
+      color:#b9ffe6;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    /* contact */
     .contact-item{
       display:flex;
       align-items:center;
@@ -755,6 +959,11 @@
       font-size:26px;
       min-width:32px;
       text-align:center;
+    }
+
+    .contact-item strong{
+      display:inline-block;
+      margin-bottom:2px;
     }
 
     .contact-socials{
@@ -779,6 +988,7 @@
 
     .social-btn:hover{
       transform:translateY(-3px);
+      background:rgba(255,255,255,.10);
     }
 
     .contact-form{
@@ -798,6 +1008,13 @@
       color:white;
       font-family:'Poppins',sans-serif;
       outline:none;
+      transition:.2s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus{
+      border-color:rgba(56,189,248,.45);
+      box-shadow:0 0 0 3px rgba(56,189,248,.08);
     }
 
     .contact-form textarea{
@@ -811,16 +1028,20 @@
     }
 
     .form-note{
-      color:rgba(255,255,255,.7);
+      color:rgba(255,255,255,.68);
       font-size:13px;
       line-height:1.7;
+      margin-top:10px;
     }
 
+    /* footer */
     .footer{
-      padding:28px 0 44px;
+      padding:30px 0 44px;
       text-align:center;
       color:rgba(255,255,255,.62);
       border-top:1px solid rgba(255,255,255,.06);
+      position:relative;
+      z-index:1;
     }
 
     .to-top{
@@ -835,14 +1056,15 @@
       cursor:pointer;
       font-size:22px;
       color:white;
-      background:linear-gradient(45deg,#22d3ee,#38bdf8,#a855f7);
-      box-shadow:0 20px 50px rgba(0,0,0,.35);
+      background:linear-gradient(45deg,var(--cyan),var(--blue),var(--purple));
+      box-shadow:var(--shadow);
     }
 
+    /* modal */
     .modal{
       position:fixed;
       inset:0;
-      background:rgba(0,0,0,.82);
+      background:rgba(0,0,0,.84);
       display:none;
       align-items:center;
       justify-content:center;
@@ -856,7 +1078,7 @@
 
     .modal-content{
       position:relative;
-      max-width:900px;
+      max-width:920px;
       width:100%;
       max-height:90vh;
       background:#091626;
@@ -871,7 +1093,6 @@
       max-height:80vh;
       object-fit:contain;
       border-radius:14px;
-      display:block;
       background:#0b1d31;
     }
 
@@ -889,6 +1110,7 @@
       cursor:pointer;
     }
 
+    /* reveal */
     .reveal{
       opacity:0;
       transform:translateY(28px);
@@ -900,12 +1122,18 @@
       transform:translateY(0);
     }
 
+    /* responsive */
+    @media (max-width: 1080px){
+      .cert-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
     @media (max-width: 980px){
-      .hero-box,
+      .hero-grid,
       .cards-3,
       .skills-grid,
       .projects-grid,
-      .cert-grid,
       .contact-grid{
         grid-template-columns:1fr;
       }
@@ -919,11 +1147,15 @@
       }
 
       .hero{
-        padding-top:36px;
+        padding-top:40px;
       }
     }
 
-    @media (max-width: 640px){
+    @media (max-width: 700px){
+      .cert-grid{
+        grid-template-columns:1fr;
+      }
+
       .nav-links{
         justify-content:center;
       }
@@ -961,13 +1193,13 @@
         <img src="logo.png" alt="Logo">
       </div>
     </div>
-    <div class="loading-text">Yusufjon Portfolio</div>
-    <div class="loading-subtext">Sayt yuklanmoqda...</div>
+    <div class="loading-title">Muxammadiyev Yusufjon</div>
+    <div class="loading-sub">Sayt yuklanmoqda...</div>
   </div>
 
   <div class="cursor-glow" id="cursorGlow"></div>
 
-  <div class="floating-icons">
+  <div class="floating-icons" aria-hidden="true">
     <span style="left:5%; animation-duration:13s;">💻</span>
     <span style="left:14%; animation-duration:16s;">🖥️</span>
     <span style="left:24%; animation-duration:12s;">⌨️</span>
@@ -980,62 +1212,100 @@
     <span style="left:93%; animation-duration:13s;">🧑‍💻</span>
   </div>
 
+  <div class="bg-words" aria-hidden="true">
+    <span style="left:5%; top:18%;">API</span>
+    <span style="left:79%; top:16%;">HTTP</span>
+    <span style="left:9%; top:62%;">npm</span>
+    <span style="left:73%; top:68%;">TCP</span>
+    <span style="left:28%; top:72%;">CSS</span>
+    <span style="left:58%; top:34%;">UDP</span>
+    <span style="left:74%; top:82%;">git</span>
+    <span style="left:7%; top:30%;">0x</span>
+    <span style="left:20%; top:82%;">fn()</span>
+  </div>
+
   <nav class="navbar">
     <div class="container nav-wrap">
-      <div class="logo">Yusufjon<span>.portfolio</span></div>
-      <div class="nav-links">
-        <a href="#about">Men haqimda</a>
-        <a href="#skills">Ko‘nikmalar</a>
-        <a href="#projects">Loyihalar</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#certificates">Sertifikatlar</a>
-        <a href="#contact">Kontakt</a>
+      <div class="logo">Muxammadiyev<span>.Yusufjon</span></div>
+
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#about" data-i18n="nav_about">Men haqimda</a>
+          <a href="#skills" data-i18n="nav_skills">Ko‘nikmalar</a>
+          <a href="#projects" data-i18n="nav_projects">Loyihalar</a>
+          <a href="#timeline" data-i18n="nav_timeline">Timeline</a>
+          <a href="#certificates" data-i18n="nav_certificates">Sertifikatlar</a>
+          <a href="#contact" data-i18n="nav_contact">Kontakt</a>
+        </div>
+
+        <div class="lang-switch">
+          <button class="lang-btn" id="langBtn">UZ ▼</button>
+          <div class="lang-menu" id="langMenu">
+            <button class="lang-option" data-lang="uz">O‘zbek</button>
+            <button class="lang-option" data-lang="en">English</button>
+            <button class="lang-option" data-lang="ru">Русский</button>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
 
   <header class="hero">
-    <div class="container hero-box">
+    <div class="container hero-grid">
       <div class="reveal">
-        <div class="badge">🚀 Premium Portfolio Website</div>
-        <h1>Salom, men <span class="gradient-text">Yusufjon</span></h1>
+        <div class="badge" data-i18n="hero_badge">🚀 Premium Portfolio Website</div>
+        <h1>
+          <span data-i18n="hero_title_1">Assalomu alaykum, men</span>
+          <span class="gradient-text">Yusufjon</span>
+        </h1>
         <p>
-          Men web dasturlash va sun’iy intellekt yo‘nalishiga qiziqaman. Hozir
+          <span data-i18n="hero_desc_1">Men web dasturlash va sun’iy intellekt yo‘nalishiga qiziqaman. Hozir</span>
           <span class="typing" id="typingText">zamonaviy portfolio va web sahifalar</span>
-          ustida ishlayapman.
+          <span data-i18n="hero_desc_2">ustida ishlayapman.</span>
         </p>
 
         <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">💻 Loyihalarni ko‘rish</a>
-          <a href="#contact" class="btn btn-secondary">📞 Bog‘lanish</a>
+          <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_1">💻 Loyihalarni ko‘rish</a>
+          <a href="#contact" class="btn btn-secondary" data-i18n="hero_btn_2">📞 Bog‘lanish</a>
         </div>
       </div>
 
       <div class="hero-card reveal">
         <div class="profile-top">
           <div class="profile-ring">
-            <img src="profile.png" alt="Profile">
+            <img src="profile.png" alt="Yusufjon profile photo">
           </div>
 
           <div class="edu-logo-ring">
-            <img src="logo.png" alt="ISFT Logo">
+            <img src="logo.png" alt="ISFT logo">
           </div>
         </div>
 
-        <div class="study-badge">
+        <div class="study-badge" data-i18n="study_badge">
           🎓 ISFT Instituti | Axborot tizimlari va texnologiyalari | 2-kurs
         </div>
 
-        <div class="mini-role">Frontend Developer | AI Enthusiast</div>
+        <div class="mini-role" data-i18n="mini_role">Frontend Developer | AI Enthusiast</div>
         <div class="mini-name">Muhammadiyev Yusufjon Siddiq o‘g‘li</div>
-        <div class="mini-desc">
-          Men, Muhammadiyev Yusufjon Siddiq o‘g‘li, ISFT institutining Axborot tizimlari va texnologiyalari yo‘nalishi 2-kurs talabasiyman. Web development, zamonaviy portfolio saytlar va sun’iy intellekt yo‘nalishiga qiziqaman.
+        <div class="mini-desc" data-i18n="mini_desc">
+          Men ISFT institutining Axborot tizimlari va texnologiyalari yo‘nalishi 2-kurs talabasiman.
+          Web development, zamonaviy portfolio saytlar va sun’iy intellekt yo‘nalishiga qiziqaman.
+          Hozir o‘z ustimda ishlash, foydali loyihalar yaratish va kuchli IT mutaxassisi bo‘lish sari intilyapman.
         </div>
 
         <div class="stats">
-          <div class="stat"><h3>3+</h3><p>Loyihalar</p></div>
-          <div class="stat"><h3>5+</h3><p>Ko‘nikmalar</p></div>
-          <div class="stat"><h3>100%</h3><p>Motivatsiya</p></div>
+          <div class="stat">
+            <h3>4+</h3>
+            <p data-i18n="stat_projects">Loyihalar</p>
+          </div>
+          <div class="stat">
+            <h3>5+</h3>
+            <p data-i18n="stat_certs">Sertifikat</p>
+          </div>
+          <div class="stat">
+            <h3>100%</h3>
+            <p data-i18n="stat_motivation">Motivatsiya</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1044,25 +1314,27 @@
   <section id="about">
     <div class="container">
       <div class="section-head reveal">
-        <h2 class="section-title">O‘zim haqimda</h2>
+        <h2 class="section-title" data-i18n="about_title">O‘zim haqimda</h2>
         <div class="section-line"></div>
-        <p class="section-sub">
-          Men, Muhammadiyev Yusufjon Siddiq o‘g‘li, ISFT institutining Axborot tizimlari va texnologiyalari yo‘nalishi 2-kurs talabasiyman. Web development, zamonaviy portfolio saytlar va sun’iy intellekt yo‘nalishiga qiziqaman. Hozir o‘z ustimda ishlash, foydali loyihalar yaratish va kuchli IT mutaxassisi bo‘lish sari intilyapman.
+        <p class="section-sub" data-i18n="about_sub">
+          Men, Muhammadiyev Yusufjon Siddiq o‘g‘li, ISFT institutining Axborot tizimlari va texnologiyalari yo‘nalishi 2-kurs talabasiman.
+          Web development, UI dizayn, portfolio saytlar va sun’iy intellekt yo‘nalishiga qiziqaman.
+          Maqsadim — foydali loyihalar yaratish, tajribamni oshirish va kuchli IT mutaxassisi bo‘lish.
         </p>
       </div>
 
       <div class="cards-3">
-        <div class="glass-card reveal">
-          <h3>🎯 Maqsadim</h3>
-          <p>Kuchli IT mutaxassis bo‘lish, foydali servislar yaratish va real loyihalarda ishlash.</p>
+        <div class="card reveal">
+          <h3 data-i18n="about_goal_title">🎯 Maqsadim</h3>
+          <p data-i18n="about_goal_text">Kuchli IT mutaxassis bo‘lish, foydali servislar yaratish va real loyihalarda ishlash.</p>
         </div>
-        <div class="glass-card reveal">
-          <h3>🧠 Qiziqishlarim</h3>
-          <p>Frontend, AI tools, portfolio website, mobil ilova g‘oyalari va chiroyli UI dizaynlar.</p>
+        <div class="card reveal">
+          <h3 data-i18n="about_interest_title">🧠 Qiziqishlarim</h3>
+          <p data-i18n="about_interest_text">Frontend, AI tools, portfolio website, so‘rovnoma tizimlari, mobil ilova g‘oyalari va chiroyli UI dizaynlar.</p>
         </div>
-        <div class="glass-card reveal">
-          <h3>⚡ Uslubim</h3>
-          <p>Sodda emas, balki ko‘zni tortadigan, professional va premium ko‘rinishdagi web sahifalar.</p>
+        <div class="card reveal">
+          <h3 data-i18n="about_style_title">⚡ Uslubim</h3>
+          <p data-i18n="about_style_text">Sodda emas, balki ko‘zni tortadigan, professional va premium ko‘rinishdagi web sahifalar yaratishni yoqtiraman.</p>
         </div>
       </div>
     </div>
@@ -1071,13 +1343,13 @@
   <section id="skills">
     <div class="container">
       <div class="section-head reveal">
-        <h2 class="section-title">Ko‘nikmalarim</h2>
+        <h2 class="section-title" data-i18n="skills_title">Ko‘nikmalarim</h2>
         <div class="section-line"></div>
-        <p class="section-sub">Hozir o‘rganayotgan va ishlatayotgan asosiy texnologiyalarim.</p>
+        <p class="section-sub" data-i18n="skills_sub">Hozir o‘rganayotgan va ishlatayotgan asosiy texnologiyalarim.</p>
       </div>
 
       <div class="skills-grid">
-        <div class="glass-card reveal">
+        <div class="card reveal">
           <div class="skill">
             <div class="skill-top"><span>HTML</span><span>88%</span></div>
             <div class="bar"><div class="fill skill-fill" data-width="88%"></div></div>
@@ -1096,15 +1368,16 @@
           </div>
         </div>
 
-        <div class="glass-card reveal">
-          <h3>🛠 Men ishlata olaman</h3>
-          <p>Portfolio website, responsive sahifalar, GitHub Pages, loyiha taqdimoti, AI promptlar va basic web UI.</p>
+        <div class="card reveal">
+          <h3 data-i18n="skills_can_title">🛠 Men ishlata olaman</h3>
+          <p data-i18n="skills_can_text">Portfolio website, responsive sahifalar, GitHub Pages, basic frontend, AI promptlar va web UI ishlari.</p>
           <div class="tags">
             <span class="tag">Frontend</span>
             <span class="tag">Portfolio</span>
             <span class="tag">GitHub</span>
             <span class="tag">AI Tools</span>
             <span class="tag">Responsive</span>
+            <span class="tag">Survey UI</span>
           </div>
         </div>
       </div>
@@ -1114,64 +1387,64 @@
   <section id="projects">
     <div class="container">
       <div class="section-head reveal">
-        <h2 class="section-title">Mening loyihalarim</h2>
+        <h2 class="section-title" data-i18n="projects_title">Mening loyihalarim</h2>
         <div class="section-line"></div>
-        <p class="section-sub">Loyihalarni kategoriya bo‘yicha saralash mumkin.</p>
+        <p class="section-sub" data-i18n="projects_sub">Loyihalarni kategoriya bo‘yicha saralash mumkin.</p>
       </div>
 
       <div class="filter-buttons reveal">
-        <button class="filter-btn active" data-filter="all">Barchasi</button>
+        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Barchasi</button>
         <button class="filter-btn" data-filter="web">Web</button>
         <button class="filter-btn" data-filter="ai">AI</button>
         <button class="filter-btn" data-filter="design">Design</button>
       </div>
 
       <div class="projects-grid">
-        <div class="glass-card project-card reveal" data-category="web">
+        <div class="card project-card reveal" data-category="web">
           <div class="project-cover">📋</div>
           <div class="project-body">
             <div class="project-top">
               <h3>Survey Pro</h3>
               <span class="live-badge">WEB</span>
             </div>
-            <p>Shaxsiy loyiham. So‘rovnoma yaratish va ulardan foydalanish uchun tayyorlangan zamonaviy web ilova.</p>
-            <a class="project-btn" href="https://survey-pro1.base44.app" target="_blank" rel="noopener noreferrer">Loyihani ko‘rish →</a>
+            <p data-i18n="project_1_text">Shaxsiy loyiham. So‘rovnoma yaratish va ulardan foydalanish uchun tayyorlangan zamonaviy web ilova.</p>
+            <a class="project-btn" href="https://survey-pro1.base44.app" target="_blank" rel="noopener noreferrer" data-i18n="project_btn">Loyihani ko‘rish →</a>
           </div>
         </div>
 
-        <div class="glass-card project-card reveal" data-category="ai">
+        <div class="card project-card reveal" data-category="ai">
           <div class="project-cover">🤖</div>
           <div class="project-body">
             <div class="project-top">
               <h3>AI Video Generator</h3>
               <span class="live-badge">AI</span>
             </div>
-            <p>Prompt orqali video va media yaratishga yo‘naltirilgan loyiha g‘oyasi va tajriba ishlari.</p>
-            <a class="project-btn" href="https://github.com/muhammadiyevyusufjon72-hash" target="_blank" rel="noopener noreferrer">Loyihani ko‘rish →</a>
+            <p data-i18n="project_2_text">Prompt orqali video va media yaratishga yo‘naltirilgan loyiha g‘oyasi va tajriba ishlari.</p>
+            <a class="project-btn" href="https://github.com/muhammadiyevyusufjon72-hash" target="_blank" rel="noopener noreferrer" data-i18n="project_btn">Loyihani ko‘rish →</a>
           </div>
         </div>
 
-        <div class="glass-card project-card reveal" data-category="design">
+        <div class="card project-card reveal" data-category="design">
           <div class="project-cover">🎨</div>
           <div class="project-body">
             <div class="project-top">
               <h3>Web Design Portfolio</h3>
               <span class="live-badge">DESIGN</span>
             </div>
-            <p>UI va portfolio sahifalari dizayniga oid ishlarim va tajribalarim jamlangan yo‘nalish.</p>
-            <a class="project-btn" href="https://github.com/muhammadiyevyusufjon72-hash" target="_blank" rel="noopener noreferrer">Loyihani ko‘rish →</a>
+            <p data-i18n="project_3_text">UI va portfolio sahifalari dizayniga oid ishlarim va tajribalarim jamlangan yo‘nalish.</p>
+            <a class="project-btn" href="https://github.com/muhammadiyevyusufjon72-hash" target="_blank" rel="noopener noreferrer" data-i18n="project_btn">Loyihani ko‘rish →</a>
           </div>
         </div>
 
-        <div class="glass-card project-card reveal" data-category="web">
+        <div class="card project-card reveal" data-category="web">
           <div class="project-cover">💼</div>
           <div class="project-body">
             <div class="project-top">
               <h3>Smart Service Finder</h3>
               <span class="live-badge">WEB</span>
             </div>
-            <p>Foydalanuvchilar uchun kerakli xizmatlarni qulay topishga yordam beradigan loyiha g‘oyasi.</p>
-            <a class="project-btn" href="https://github.com/muhammadiyevyusufjon72-hash" target="_blank" rel="noopener noreferrer">Loyihani ko‘rish →</a>
+            <p data-i18n="project_4_text">Foydalanuvchilar uchun kerakli xizmatlarni qulay topishga yordam beradigan loyiha g‘oyasi.</p>
+            <a class="project-btn" href="https://github.com/muhammadiyevyusufjon72-hash" target="_blank" rel="noopener noreferrer" data-i18n="project_btn">Loyihani ko‘rish →</a>
           </div>
         </div>
       </div>
@@ -1181,9 +1454,9 @@
   <section id="timeline">
     <div class="container">
       <div class="section-head reveal">
-        <h2 class="section-title">Timeline</h2>
+        <h2 class="section-title" data-i18n="timeline_title">Timeline</h2>
         <div class="section-line"></div>
-        <p class="section-sub">Qachon nima o‘rganganim va erishgan natijalarim.</p>
+        <p class="section-sub" data-i18n="timeline_sub">Qachon nima o‘rganganim va erishgan natijalarim.</p>
       </div>
 
       <div class="timeline">
@@ -1191,7 +1464,7 @@
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <h3>2024</h3>
-            <p>Web development va dizayn yo‘nalishiga qiziqishim boshlandi.</p>
+            <p data-i18n="timeline_1">Web development va dizayn yo‘nalishiga qiziqishim boshlandi. HTML/CSS asoslari bilan ishlashni boshladim.</p>
           </div>
         </div>
 
@@ -1199,7 +1472,7 @@
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <h3>2025</h3>
-            <p>Web Design kursini muvaffaqiyatli tamomlab sertifikat oldim.</p>
+            <p data-i18n="timeline_2">Web Design kursini muvaffaqiyatli tamomlab sertifikat oldim. Portfolio va UI dizaynga qiziqishim kuchaydi.</p>
           </div>
         </div>
 
@@ -1207,7 +1480,7 @@
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <h3>2026</h3>
-            <p>Five Million AI Leaders va Coursera kurslari orqali AI, Python va agentic workflow bo‘yicha bilimlarimni oshirdim.</p>
+            <p data-i18n="timeline_3">Five Million AI Leaders va Coursera kurslari orqali AI, Python va agentic workflow bo‘yicha bilimlarimni oshirdim.</p>
           </div>
         </div>
       </div>
@@ -1217,64 +1490,69 @@
   <section id="certificates">
     <div class="container">
       <div class="section-head reveal">
-        <h2 class="section-title">Sertifikatlarim</h2>
+        <h2 class="section-title" data-i18n="cert_title">Sertifikatlarim</h2>
         <div class="section-line"></div>
-        <p class="section-sub">Sertifikat ustiga bossang kattaroq ochiladi.</p>
+        <p class="section-sub" data-i18n="cert_sub">Sertifikat ustiga bossang kattaroq ochiladi.</p>
       </div>
 
       <div class="cert-grid">
-        <div class="glass-card cert-card reveal cert-open" data-img="ai-leaders.jpg">
+        <div class="card cert-card reveal cert-open" data-img="ai-leaders.jpg">
           <div class="cert-image">
             <img src="ai-leaders.jpg" alt="Five Million AI Leaders Certificate">
           </div>
           <div class="cert-body">
             <div class="cert-year">2026</div>
             <h3>Five Million AI Leaders</h3>
-            <p>Sun’iy intellekt va prompt engineering bo‘yicha xalqaro dastur sertifikati.</p>
+            <p data-i18n="cert_1_text">Sun’iy intellekt va prompt engineering bo‘yicha xalqaro dastur sertifikati.</p>
+            <div class="verified">✔ Verified</div>
           </div>
         </div>
 
-        <div class="glass-card cert-card reveal cert-open" data-img="web-design.jpg">
+        <div class="card cert-card reveal cert-open" data-img="web-design.jpg">
           <div class="cert-image">
             <img src="web-design.jpg" alt="Web Design Certificate">
           </div>
           <div class="cert-body">
             <div class="cert-year">2025</div>
             <h3>Web Design</h3>
-            <p>Web Design kursini muvaffaqiyatli tamomlaganlik sertifikati.</p>
+            <p data-i18n="cert_2_text">Web Design kursini muvaffaqiyatli tamomlaganlik sertifikati.</p>
+            <div class="verified">✔ Verified</div>
           </div>
         </div>
 
-        <div class="glass-card cert-card reveal cert-open" data-img="ibm-agents.jpg">
+        <div class="card cert-card reveal cert-open" data-img="ibm-agents.jpg">
           <div class="cert-image">
             <img src="ibm-agents.jpg" alt="IBM Agents Certificate">
           </div>
           <div class="cert-body">
             <div class="cert-year">2026</div>
-            <h3>Building AI Agents and Agentic Workflows</h3>
-            <p>IBM va Coursera orqali AI agents va agentic workflow bo‘yicha sertifikat.</p>
+            <h3>Building AI Agents</h3>
+            <p data-i18n="cert_3_text">IBM va Coursera orqali AI agents va agentic workflow bo‘yicha sertifikat.</p>
+            <div class="verified">✔ Verified</div>
           </div>
         </div>
 
-        <div class="glass-card cert-card reveal cert-open" data-img="ibm-generative.jpg">
+        <div class="card cert-card reveal cert-open" data-img="ibm-generative.jpg">
           <div class="cert-image">
             <img src="ibm-generative.jpg" alt="IBM Generative AI Certificate">
           </div>
           <div class="cert-body">
             <div class="cert-year">2026</div>
-            <h3>Generative AI: Elevate your Software Development Career</h3>
-            <p>Generative AI va software development yo‘nalishidagi Coursera sertifikati.</p>
+            <h3>Generative AI</h3>
+            <p data-i18n="cert_4_text">Generative AI va software development yo‘nalishidagi Coursera sertifikati.</p>
+            <div class="verified">✔ Verified</div>
           </div>
         </div>
 
-        <div class="glass-card cert-card reveal cert-open" data-img="python.jpg">
+        <div class="card cert-card reveal cert-open" data-img="python.jpg">
           <div class="cert-image">
             <img src="python.jpg" alt="Python Certificate">
           </div>
           <div class="cert-body">
             <div class="cert-year">2026</div>
             <h3>Programming for Everybody</h3>
-            <p>University of Michigan va Coursera orqali Python boshlang‘ich kurs sertifikati.</p>
+            <p data-i18n="cert_5_text">University of Michigan va Coursera orqali Python boshlang‘ich kurs sertifikati.</p>
+            <div class="verified">✔ Verified</div>
           </div>
         </div>
       </div>
@@ -1284,13 +1562,13 @@
   <section id="contact">
     <div class="container">
       <div class="section-head reveal">
-        <h2 class="section-title">Bog‘lanish</h2>
+        <h2 class="section-title" data-i18n="contact_title">Bog‘lanish</h2>
         <div class="section-line"></div>
-        <p class="section-sub">Pastdagi formani to‘ldirib xabar yuborish mumkin.</p>
+        <p class="section-sub" data-i18n="contact_sub">Pastdagi formani to‘ldirib xabar yuborish mumkin.</p>
       </div>
 
       <div class="contact-grid">
-        <div class="glass-card reveal">
+        <div class="card reveal">
           <div class="contact-item">
             <div class="icon">📱</div>
             <div>
@@ -1322,16 +1600,16 @@
           </div>
         </div>
 
-        <div class="glass-card reveal">
-          <h3>✉ Xabar yuborish</h3>
+        <div class="card reveal">
+          <h3 data-i18n="form_title">✉ Xabar yuborish</h3>
           <form class="contact-form" action="mailto:muhammadiyevyusufjon72@gmail.com" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="Ismingiz" required>
-            <input type="email" name="email" placeholder="Emailingiz" required>
-            <textarea name="message" placeholder="Xabaringizni yozing..." required></textarea>
-            <button type="submit" class="btn btn-primary">Yuborish</button>
+            <input type="text" name="name" data-i18n-placeholder="form_name" placeholder="Ismingiz" required>
+            <input type="email" name="email" data-i18n-placeholder="form_email" placeholder="Emailingiz" required>
+            <textarea name="message" data-i18n-placeholder="form_message" placeholder="Xabaringizni yozing..." required></textarea>
+            <button type="submit" class="btn btn-primary" data-i18n="form_btn">Yuborish</button>
           </form>
-          <p class="form-note">
-            Bu forma email orqali ochiladi. Keyin xohlasang, uni Formspree yoki EmailJS bilan haqiqiy yuboradigan qilamiz.
+          <p class="form-note" data-i18n="form_note">
+            Bu forma email dasturi orqali ochiladi. Keyin xohlasang, Formspree yoki EmailJS bilan haqiqiy ishlaydigan qilamiz.
           </p>
         </div>
       </div>
@@ -1339,19 +1617,295 @@
   </section>
 
   <div class="footer">
-    © 2026 — <span class="gradient-text">Yusufjon</span> tomonidan yaratilgan.
+    © 2026 — <span class="gradient-text">Muxammadiyev Yusufjon</span> <span data-i18n="footer_text">tomonidan yaratilgan.</span>
   </div>
 
   <button class="to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Yuqoriga">↑</button>
 
   <div class="modal" id="certModal">
     <div class="modal-content">
-      <button class="modal-close" id="modalClose">✕</button>
-      <img src="" alt="Certificate Preview" id="modalImg">
+      <button class="modal-close" id="modalClose" aria-label="Yopish">✕</button>
+      <img src="" alt="Certificate preview" id="modalImg">
     </div>
   </div>
 
   <script>
+    const translations = {
+      uz: {
+        nav_about: "Men haqimda",
+        nav_skills: "Ko‘nikmalar",
+        nav_projects: "Loyihalar",
+        nav_timeline: "Timeline",
+        nav_certificates: "Sertifikatlar",
+        nav_contact: "Kontakt",
+
+        hero_badge: "🚀 Premium Portfolio Website",
+        hero_title_1: "Assalomu alaykum, men",
+        hero_desc_1: "Men web dasturlash va sun’iy intellekt yo‘nalishiga qiziqaman. Hozir",
+        hero_desc_2: "ustida ishlayapman.",
+        hero_btn_1: "💻 Loyihalarni ko‘rish",
+        hero_btn_2: "📞 Bog‘lanish",
+
+        study_badge: "🎓 ISFT Instituti | Axborot tizimlari va texnologiyalari | 2-kurs",
+        mini_role: "Frontend Developer | AI Enthusiast",
+        mini_desc: "Men ISFT institutining Axborot tizimlari va texnologiyalari yo‘nalishi 2-kurs talabasiyman. Web development, zamonaviy portfolio saytlar va sun’iy intellekt yo‘nalishiga qiziqaman. Hozir o‘z ustimda ishlash, foydali loyihalar yaratish va kuchli IT mutaxassisi bo‘lish sari intilyapman.",
+
+        stat_projects: "Loyihalar",
+        stat_certs: "Sertifikat",
+        stat_motivation: "Motivatsiya",
+
+        about_title: "O‘zim haqimda",
+        about_sub: "Men, Muhammadiyev Yusufjon Siddiq o‘g‘li, ISFT institutining Axborot tizimlari va texnologiyalari yo‘nalishi 2-kurs talabasiman. Web development, UI dizayn, portfolio saytlar va sun’iy intellekt yo‘nalishiga qiziqaman. Maqsadim — foydali loyihalar yaratish, tajribamni oshirish va kuchli IT mutaxassisi bo‘lish.",
+        about_goal_title: "🎯 Maqsadim",
+        about_goal_text: "Kuchli IT mutaxassis bo‘lish, foydali servislar yaratish va real loyihalarda ishlash.",
+        about_interest_title: "🧠 Qiziqishlarim",
+        about_interest_text: "Frontend, AI tools, portfolio website, so‘rovnoma tizimlari, mobil ilova g‘oyalari va chiroyli UI dizaynlar.",
+        about_style_title: "⚡ Uslubim",
+        about_style_text: "Sodda emas, balki ko‘zni tortadigan, professional va premium ko‘rinishdagi web sahifalar yaratishni yoqtiraman.",
+
+        skills_title: "Ko‘nikmalarim",
+        skills_sub: "Hozir o‘rganayotgan va ishlatayotgan asosiy texnologiyalarim.",
+        skills_can_title: "🛠 Men ishlata olaman",
+        skills_can_text: "Portfolio website, responsive sahifalar, GitHub Pages, basic frontend, AI promptlar va web UI ishlari.",
+
+        projects_title: "Mening loyihalarim",
+        projects_sub: "Loyihalarni kategoriya bo‘yicha saralash mumkin.",
+        filter_all: "Barchasi",
+        project_1_text: "Shaxsiy loyiham. So‘rovnoma yaratish va ulardan foydalanish uchun tayyorlangan zamonaviy web ilova.",
+        project_2_text: "Prompt orqali video va media yaratishga yo‘naltirilgan loyiha g‘oyasi va tajriba ishlari.",
+        project_3_text: "UI va portfolio sahifalari dizayniga oid ishlarim va tajribalarim jamlangan yo‘nalish.",
+        project_4_text: "Foydalanuvchilar uchun kerakli xizmatlarni qulay topishga yordam beradigan loyiha g‘oyasi.",
+        project_btn: "Loyihani ko‘rish →",
+
+        timeline_title: "Timeline",
+        timeline_sub: "Qachon nima o‘rganganim va erishgan natijalarim.",
+        timeline_1: "Web development va dizayn yo‘nalishiga qiziqishim boshlandi. HTML/CSS asoslari bilan ishlashni boshladim.",
+        timeline_2: "Web Design kursini muvaffaqiyatli tamomlab sertifikat oldim. Portfolio va UI dizaynga qiziqishim kuchaydi.",
+        timeline_3: "Five Million AI Leaders va Coursera kurslari orqali AI, Python va agentic workflow bo‘yicha bilimlarimni oshirdim.",
+
+        cert_title: "Sertifikatlarim",
+        cert_sub: "Sertifikat ustiga bossang kattaroq ochiladi.",
+        cert_1_text: "Sun’iy intellekt va prompt engineering bo‘yicha xalqaro dastur sertifikati.",
+        cert_2_text: "Web Design kursini muvaffaqiyatli tamomlaganlik sertifikati.",
+        cert_3_text: "IBM va Coursera orqali AI agents va agentic workflow bo‘yicha sertifikat.",
+        cert_4_text: "Generative AI va software development yo‘nalishidagi Coursera sertifikati.",
+        cert_5_text: "University of Michigan va Coursera orqali Python boshlang‘ich kurs sertifikati.",
+
+        contact_title: "Bog‘lanish",
+        contact_sub: "Pastdagi formani to‘ldirib xabar yuborish mumkin.",
+        form_title: "✉ Xabar yuborish",
+        form_name: "Ismingiz",
+        form_email: "Emailingiz",
+        form_message: "Xabaringizni yozing...",
+        form_btn: "Yuborish",
+        form_note: "Bu forma email dasturi orqali ochiladi. Keyin xohlasang, Formspree yoki EmailJS bilan haqiqiy ishlaydigan qilamiz.",
+
+        footer_text: "tomonidan yaratilgan."
+      },
+
+      en: {
+        nav_about: "About",
+        nav_skills: "Skills",
+        nav_projects: "Projects",
+        nav_timeline: "Timeline",
+        nav_certificates: "Certificates",
+        nav_contact: "Contact",
+
+        hero_badge: "🚀 Premium Portfolio Website",
+        hero_title_1: "Hello, I'm",
+        hero_desc_1: "I am interested in web development and artificial intelligence. Right now I am working on",
+        hero_desc_2: ".",
+        hero_btn_1: "💻 View Projects",
+        hero_btn_2: "📞 Contact",
+
+        study_badge: "🎓 ISFT Institute | Information Systems and Technologies | 2nd year",
+        mini_role: "Frontend Developer | AI Enthusiast",
+        mini_desc: "I am a 2nd year student of Information Systems and Technologies at ISFT Institute. I am interested in web development, modern portfolio websites and artificial intelligence. I am currently improving myself, building useful projects and striving to become a strong IT specialist.",
+
+        stat_projects: "Projects",
+        stat_certs: "Certificates",
+        stat_motivation: "Motivation",
+
+        about_title: "About Me",
+        about_sub: "I am Muhammadiyev Yusufjon Siddiq o‘g‘li, a 2nd year student of Information Systems and Technologies at ISFT Institute. I am interested in web development, UI design, portfolio websites and artificial intelligence. My goal is to build useful projects, improve my experience and become a strong IT specialist.",
+        about_goal_title: "🎯 My Goal",
+        about_goal_text: "To become a strong IT specialist, create useful services and work on real projects.",
+        about_interest_title: "🧠 My Interests",
+        about_interest_text: "Frontend, AI tools, portfolio websites, survey systems, mobile app ideas and beautiful UI designs.",
+        about_style_title: "⚡ My Style",
+        about_style_text: "I like creating web pages that are not plain, but eye-catching, professional and premium.",
+
+        skills_title: "My Skills",
+        skills_sub: "Main technologies I am currently learning and using.",
+        skills_can_title: "🛠 I Can Work With",
+        skills_can_text: "Portfolio websites, responsive pages, GitHub Pages, basic frontend, AI prompts and web UI works.",
+
+        projects_title: "My Projects",
+        projects_sub: "Projects can be filtered by category.",
+        filter_all: "All",
+        project_1_text: "My personal project. A modern web app built for creating and using surveys.",
+        project_2_text: "A project idea and experiments focused on generating videos and media through prompts.",
+        project_3_text: "A direction focused on UI and portfolio page designs and my related work.",
+        project_4_text: "A project idea that helps users easily find the services they need.",
+        project_btn: "View Project →",
+
+        timeline_title: "Timeline",
+        timeline_sub: "What I learned and achieved over time.",
+        timeline_1: "My interest in web development and design began. I started working with HTML/CSS basics.",
+        timeline_2: "I successfully completed the Web Design course and earned a certificate. My interest in portfolios and UI design grew stronger.",
+        timeline_3: "Through Five Million AI Leaders and Coursera courses, I improved my knowledge in AI, Python and agentic workflows.",
+
+        cert_title: "My Certificates",
+        cert_sub: "Click any certificate to view it larger.",
+        cert_1_text: "International program certificate in artificial intelligence and prompt engineering.",
+        cert_2_text: "Certificate for successfully completing the Web Design course.",
+        cert_3_text: "Certificate in AI agents and agentic workflows through IBM and Coursera.",
+        cert_4_text: "Coursera certificate in Generative AI and software development.",
+        cert_5_text: "Introductory Python certificate through University of Michigan and Coursera.",
+
+        contact_title: "Contact",
+        contact_sub: "You can fill out the form below to send a message.",
+        form_title: "✉ Send a Message",
+        form_name: "Your name",
+        form_email: "Your email",
+        form_message: "Write your message...",
+        form_btn: "Send",
+        form_note: "This form opens via your email app. Later, we can connect it to Formspree or EmailJS for real submissions.",
+
+        footer_text: "created this website."
+      },
+
+      ru: {
+        nav_about: "Обо мне",
+        nav_skills: "Навыки",
+        nav_projects: "Проекты",
+        nav_timeline: "Таймлайн",
+        nav_certificates: "Сертификаты",
+        nav_contact: "Контакты",
+
+        hero_badge: "🚀 Премиум сайт-портфолио",
+        hero_title_1: "Привет, я",
+        hero_desc_1: "Я интересуюсь веб-разработкой и искусственным интеллектом. Сейчас я работаю над",
+        hero_desc_2: ".",
+        hero_btn_1: "💻 Посмотреть проекты",
+        hero_btn_2: "📞 Связаться",
+
+        study_badge: "🎓 Институт ISFT | Информационные системы и технологии | 2 курс",
+        mini_role: "Frontend Developer | AI Enthusiast",
+        mini_desc: "Я студент 2 курса направления Информационные системы и технологии института ISFT. Я интересуюсь веб-разработкой, современными сайтами-портфолио и искусственным интеллектом. Сейчас я развиваюсь, создаю полезные проекты и стремлюсь стать сильным IT-специалистом.",
+
+        stat_projects: "Проекты",
+        stat_certs: "Сертификаты",
+        stat_motivation: "Мотивация",
+
+        about_title: "Обо мне",
+        about_sub: "Я, Мухаммадиев Юсуфжон Сиддик угли, студент 2 курса направления Информационные системы и технологии института ISFT. Меня интересуют веб-разработка, UI-дизайн, сайты-портфолио и искусственный интеллект. Моя цель — создавать полезные проекты, развивать опыт и стать сильным IT-специалистом.",
+        about_goal_title: "🎯 Моя цель",
+        about_goal_text: "Стать сильным IT-специалистом, создавать полезные сервисы и работать над реальными проектами.",
+        about_interest_title: "🧠 Мои интересы",
+        about_interest_text: "Frontend, AI tools, сайты-портфолио, системы опросов, идеи мобильных приложений и красивый UI-дизайн.",
+        about_style_title: "⚡ Мой стиль",
+        about_style_text: "Мне нравится создавать не обычные, а заметные, профессиональные и премиальные веб-страницы.",
+
+        skills_title: "Мои навыки",
+        skills_sub: "Основные технологии, которые я сейчас изучаю и использую.",
+        skills_can_title: "🛠 Я умею работать с",
+        skills_can_text: "Сайтами-портфолио, адаптивными страницами, GitHub Pages, basic frontend, AI prompt и web UI.",
+
+        projects_title: "Мои проекты",
+        projects_sub: "Проекты можно фильтровать по категориям.",
+        filter_all: "Все",
+        project_1_text: "Мой личный проект. Современное веб-приложение для создания и использования опросов.",
+        project_2_text: "Идея проекта и эксперименты, направленные на генерацию видео и медиа через промпты.",
+        project_3_text: "Направление, связанное с UI и дизайном страниц-портфолио и моими работами.",
+        project_4_text: "Идея проекта, которая помогает пользователям удобно находить нужные услуги.",
+        project_btn: "Открыть проект →",
+
+        timeline_title: "Таймлайн",
+        timeline_sub: "Что я изучал и каких результатов достигал со временем.",
+        timeline_1: "Мой интерес к веб-разработке и дизайну начался. Я начал работать с основами HTML/CSS.",
+        timeline_2: "Я успешно завершил курс Web Design и получил сертификат. Мой интерес к портфолио и UI-дизайну усилился.",
+        timeline_3: "Благодаря курсам Five Million AI Leaders и Coursera я улучшил знания по AI, Python и agentic workflows.",
+
+        cert_title: "Мои сертификаты",
+        cert_sub: "Нажмите на сертификат, чтобы открыть его крупнее.",
+        cert_1_text: "Международный сертификат по искусственному интеллекту и prompt engineering.",
+        cert_2_text: "Сертификат об успешном завершении курса Web Design.",
+        cert_3_text: "Сертификат по AI agents и agentic workflows от IBM и Coursera.",
+        cert_4_text: "Сертификат Coursera по Generative AI и software development.",
+        cert_5_text: "Начальный сертификат по Python от University of Michigan и Coursera.",
+
+        contact_title: "Контакты",
+        contact_sub: "Вы можете заполнить форму ниже, чтобы отправить сообщение.",
+        form_title: "✉ Отправить сообщение",
+        form_name: "Ваше имя",
+        form_email: "Ваш email",
+        form_message: "Напишите сообщение...",
+        form_btn: "Отправить",
+        form_note: "Эта форма открывается через почтовое приложение. Позже можно подключить Formspree или EmailJS для реальной отправки.",
+
+        footer_text: "создал этот сайт."
+      }
+    };
+
+    const typingWords = {
+      uz: [
+        "zamonaviy portfolio va web sahifalar",
+        "AI tools va foydali interfeyslar",
+        "GitHub Pages va premium dizaynlar"
+      ],
+      en: [
+        "modern portfolio and web pages",
+        "AI tools and useful interfaces",
+        "GitHub Pages and premium designs"
+      ],
+      ru: [
+        "современными сайтами-портфолио",
+        "AI tools и полезными интерфейсами",
+        "GitHub Pages и премиальным дизайном"
+      ]
+    };
+
+    let currentLang = "uz";
+    let wordIndex = 0;
+    let typingInterval;
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        if (translations[lang] && translations[lang][key]) {
+          el.placeholder = translations[lang][key];
+        }
+      });
+
+      document.getElementById("langBtn").textContent =
+        (lang === "uz" ? "UZ ▼" : lang === "en" ? "EN ▼" : "RU ▼");
+
+      startTyping();
+    }
+
+    function startTyping() {
+      clearInterval(typingInterval);
+      const typingText = document.getElementById("typingText");
+      const words = typingWords[currentLang];
+      typingText.textContent = words[wordIndex % words.length];
+
+      typingInterval = setInterval(() => {
+        wordIndex = (wordIndex + 1) % words.length;
+        typingText.textContent = words[wordIndex];
+      }, 2200);
+    }
+
     const loadingScreen = document.getElementById("loadingScreen");
     window.addEventListener("load", () => {
       setTimeout(() => {
@@ -1359,27 +1913,14 @@
       }, 1500);
     });
 
-    const typingWords = [
-      "zamonaviy portfolio va web sahifalar",
-      "AI tools va foydali interfeyslar",
-      "GitHub Pages va premium dizaynlar"
-    ];
-
-    let wordIndex = 0;
-    const typingText = document.getElementById("typingText");
-    setInterval(() => {
-      wordIndex = (wordIndex + 1) % typingWords.length;
-      typingText.textContent = typingWords[wordIndex];
-    }, 2200);
-
-    const reveals = document.querySelectorAll('.reveal');
-    const skillFills = document.querySelectorAll('.skill-fill');
+    const reveals = document.querySelectorAll(".reveal");
+    const skillFills = document.querySelectorAll(".skill-fill");
 
     function revealOnScroll() {
       reveals.forEach(el => {
         const top = el.getBoundingClientRect().top;
         if (top < window.innerHeight - 80) {
-          el.classList.add('show');
+          el.classList.add("show");
         }
       });
 
@@ -1392,13 +1933,13 @@
       });
     }
 
-    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener("scroll", revealOnScroll);
     revealOnScroll();
 
-    const glow = document.getElementById('cursorGlow');
-    window.addEventListener('mousemove', (e) => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top = e.clientY + 'px';
+    const glow = document.getElementById("cursorGlow");
+    window.addEventListener("mousemove", (e) => {
+      glow.style.left = e.clientX + "px";
+      glow.style.top = e.clientY + "px";
     });
 
     const filterButtons = document.querySelectorAll(".filter-btn");
@@ -1435,13 +1976,44 @@
 
     modalClose.addEventListener("click", () => {
       certModal.classList.remove("show");
+      modalImg.src = "";
     });
 
     certModal.addEventListener("click", (e) => {
       if (e.target === certModal) {
         certModal.classList.remove("show");
+        modalImg.src = "";
       }
     });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        certModal.classList.remove("show");
+        modalImg.src = "";
+      }
+    });
+
+    const langBtn = document.getElementById("langBtn");
+    const langMenu = document.getElementById("langMenu");
+
+    langBtn.addEventListener("click", () => {
+      langMenu.classList.toggle("show");
+    });
+
+    document.querySelectorAll(".lang-option").forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyLanguage(btn.dataset.lang);
+        langMenu.classList.remove("show");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".lang-switch")) {
+        langMenu.classList.remove("show");
+      }
+    });
+
+    applyLanguage("uz");
   </script>
 </body>
 </html>
