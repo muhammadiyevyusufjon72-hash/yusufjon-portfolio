@@ -373,6 +373,35 @@
       font-size:16px;
     }
 
+    .credly-wrap{
+      text-align:center;
+      margin-top:18px;
+      margin-bottom:28px;
+    }
+
+    .credly-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 24px;
+      border-radius:999px;
+      border:1px solid rgba(56,189,248,.25);
+      background:rgba(34,211,238,.06);
+      color:#bff8ff;
+      font-weight:700;
+      box-shadow:var(--shadow);
+      transition:.25s ease;
+    }
+
+    .credly-btn:hover{
+      transform:translateY(-4px);
+      background:rgba(34,211,238,.11);
+      box-shadow:
+        0 0 20px rgba(34,211,238,.24),
+        0 18px 50px rgba(0,0,0,.35);
+    }
+
     .hero{
       padding:72px 0 40px;
     }
@@ -1244,7 +1273,7 @@
       <div class="reveal">
         <div class="badge" data-i18n="hero_badge">🚀 Premium Portfolio Website</div>
         <h1>
-          <span data-i18n="hero_title_1">Assalomu alaylum</span>
+          <span data-i18n="hero_title_1">Assalomu alaykum</span>
           <span class="gradient-text">Xush kelibsiz</span>
         </h1>
         <p>
@@ -1286,11 +1315,11 @@
 
         <div class="stats">
           <div class="stat">
-            <h3>4+</h3>
+            <h3>5+</h3>
             <p data-i18n="stat_projects">Loyihalar</p>
           </div>
           <div class="stat">
-            <h3>5+</h3>
+            <h3>7+</h3>
             <p data-i18n="stat_certs">Sertifikat</p>
           </div>
           <div class="stat">
@@ -1494,6 +1523,12 @@
         <p class="section-sub" data-i18n="cert_sub">Sertifikat ustiga bossang kattaroq ochiladi.</p>
       </div>
 
+      <div class="credly-wrap reveal">
+        <a class="credly-btn" href="https://www.credly.com/users/yusufjon-muhammadiyev" target="_blank" rel="noopener noreferrer" data-i18n="credly_btn">
+          🏅 Barcha Credly sertifikatlarimni ko‘rish →
+        </a>
+      </div>
+
       <div class="cert-grid">
         <div class="card cert-card reveal cert-open" data-img="ai-leaders.jpg">
           <div class="cert-image">
@@ -1554,6 +1589,18 @@
             <div class="verified">✔ Verified</div>
           </div>
         </div>
+
+        <div class="card cert-card reveal cert-open" data-img="ibm-ai-fundamentals.jpg">
+          <div class="cert-image">
+            <img src="ibm-ai-fundamentals.jpg" alt="IBM Artificial Intelligence Fundamentals">
+          </div>
+          <div class="cert-body">
+            <div class="cert-year">2026</div>
+            <h3>Artificial Intelligence Fundamentals</h3>
+            <p data-i18n="cert_6_text">IBM SkillsBuild tomonidan berilgan sun’iy intellekt asoslari bo‘yicha badge/certificate.</p>
+            <div class="verified">✔ IBM SkillsBuild</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1596,6 +1643,7 @@
             <a class="social-btn" href="https://t.me/Y06071722J" target="_blank" rel="noopener noreferrer">✈ Telegram</a>
             <a class="social-btn" href="https://instagram.com/yusufjon_22.17_" target="_blank" rel="noopener noreferrer">📷 Instagram</a>
             <a class="social-btn" href="mailto:muhammadiyevyusufjon72@gmail.com">📧 Email</a>
+            <a class="social-btn" href="https://www.credly.com/users/yusufjon-muhammadiyev" target="_blank" rel="noopener noreferrer">🏅 Credly</a>
           </div>
         </div>
 
@@ -1689,6 +1737,8 @@
         cert_3_text: "IBM va Coursera orqali AI agents va agentic workflow bo‘yicha sertifikat.",
         cert_4_text: "Generative AI va software development yo‘nalishidagi Coursera sertifikati.",
         cert_5_text: "University of Michigan va Coursera orqali Python boshlang‘ich kurs sertifikati.",
+        cert_6_text: "IBM SkillsBuild tomonidan berilgan sun’iy intellekt asoslari bo‘yicha badge/certificate.",
+        credly_btn: "🏅 Barcha Credly sertifikatlarimni ko‘rish →",
 
         contact_title: "Bog‘lanish",
         contact_sub: "Pastdagi formani to‘ldirib xabar yuborish mumkin.",
@@ -1761,6 +1811,8 @@
         cert_3_text: "Certificate in AI agents and agentic workflows through IBM and Coursera.",
         cert_4_text: "Coursera certificate in Generative AI and software development.",
         cert_5_text: "Introductory Python certificate through University of Michigan and Coursera.",
+        cert_6_text: "An IBM SkillsBuild badge/certificate in Artificial Intelligence Fundamentals.",
+        credly_btn: "🏅 View all my Credly certificates →",
 
         contact_title: "Contact",
         contact_sub: "You can fill out the form below to send a message.",
@@ -1833,6 +1885,8 @@
         cert_3_text: "Сертификат по AI agents и agentic workflows от IBM и Coursera.",
         cert_4_text: "Сертификат Coursera по Generative AI и software development.",
         cert_5_text: "Начальный сертификат по Python от University of Michigan и Coursera.",
+        cert_6_text: "Badge/сертификат IBM SkillsBuild по основам искусственного интеллекта.",
+        credly_btn: "🏅 Посмотреть все мои сертификаты Credly →",
 
         contact_title: "Контакты",
         contact_sub: "Вы можете заполнить форму ниже, чтобы отправить сообщение.",
