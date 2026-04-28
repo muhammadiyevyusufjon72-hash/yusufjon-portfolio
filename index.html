@@ -980,6 +980,58 @@
       font-weight:700;
     }
 
+    .efset-cert-link{
+      display:block;
+      color:inherit;
+      text-decoration:none;
+      border-radius:var(--radius);
+    }
+
+    .efset-cert{
+      position:relative;
+      isolation:isolate;
+    }
+
+    .efset-cert:hover{
+      transform:translateY(-12px) scale(1.015);
+      box-shadow:
+        0 0 24px rgba(34,211,238,.28),
+        0 0 48px rgba(168,85,247,.22),
+        0 18px 50px rgba(0,0,0,.35);
+    }
+
+    .efset-cert::after{
+      content:"";
+      position:absolute;
+      top:-60%;
+      left:-80%;
+      width:60%;
+      height:220%;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+      transform:rotate(22deg);
+      transition:.65s ease;
+      pointer-events:none;
+      z-index:2;
+    }
+
+    .efset-cert:hover::after{
+      left:120%;
+    }
+
+    .verify-note{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      margin-top:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(34,211,238,.10);
+      border:1px solid rgba(34,211,238,.26);
+      color:#bff8ff;
+      font-size:12px;
+      font-weight:700;
+    }
+
     .contact-item{
       display:flex;
       align-items:center;
@@ -1601,6 +1653,36 @@
             <div class="verified">✔ IBM SkillsBuild</div>
           </div>
         </div>
+
+        <a class="efset-cert-link" href="https://cert.efset.org/yP2F8n" target="_blank" rel="noopener noreferrer">
+          <div class="card cert-card reveal efset-cert" data-img="efset-c1.jpg">
+            <div class="cert-image">
+              <img src="efset-c1.jpg" alt="EF SET C1 Advanced Certificate">
+            </div>
+            <div class="cert-body">
+              <div class="cert-year">2026</div>
+              <h3>EF SET English Certificate</h3>
+              <p>EF SET natijasi: 66/100 — C1 Advanced. Reading: C2, Listening: B2, Writing: C1.</p>
+              <div class="verified">✔ C1 Advanced</div>
+              <div class="verify-note">🔗 Verify link ochiladi</div>
+            </div>
+          </div>
+        </a>
+
+        <a class="efset-cert-link" href="https://cert.efset.org/yP2F8n" target="_blank" rel="noopener noreferrer">
+          <div class="card cert-card reveal efset-cert" data-img="efset-b2.jpg">
+            <div class="cert-image">
+              <img src="efset-b2.jpg" alt="EF SET B2 Upper Intermediate Certificate">
+            </div>
+            <div class="cert-body">
+              <div class="cert-year">2026</div>
+              <h3>EF SET English Certificate</h3>
+              <p>EF SET natijasi: 55/100 — B2 Upper Intermediate. Reading: C2, Listening: A1.</p>
+              <div class="verified">✔ B2 Upper Intermediate</div>
+              <div class="verify-note">🔗 Verify link ochiladi</div>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -1875,84 +1957,72 @@
         timeline_title: "Таймлайн",
         timeline_sub: "Что я изучал и каких результатов достигал со временем.",
         timeline_1: "Мой интерес к веб-разработке и дизайну начался. Я начал работать с основами HTML/CSS.",
-        timeline_2: "Я успешно завершил курс Web Design и получил сертификат. Мой интерес к портфолио и UI-дизайну усилился.",
-        timeline_3: "Благодаря курсам Five Million AI Leaders и Coursera я улучшил знания по AI, Python и agentic workflows.",
+        timeline_2: "Я успешно завершил курс Web Design и получил сертификат. Мой интерес к портфолио и UI-дизайну стал сильнее.",
+        timeline_3: "Через курсы Five Million AI Leaders и Coursera я улучшил знания в AI, Python и agentic workflow.",
 
         cert_title: "Мои сертификаты",
         cert_sub: "Нажмите на сертификат, чтобы открыть его крупнее.",
         cert_1_text: "Международный сертификат по искусственному интеллекту и prompt engineering.",
-        cert_2_text: "Сертификат об успешном завершении курса Web Design.",
-        cert_3_text: "Сертификат по AI agents и agentic workflows от IBM и Coursera.",
+        cert_2_text: "Сертификат об успешном окончании курса Web Design.",
+        cert_3_text: "Сертификат по AI agents и agentic workflow через IBM и Coursera.",
         cert_4_text: "Сертификат Coursera по Generative AI и software development.",
-        cert_5_text: "Начальный сертификат по Python от University of Michigan и Coursera.",
-        cert_6_text: "Badge/сертификат IBM SkillsBuild по основам искусственного интеллекта.",
+        cert_5_text: "Начальный сертификат по Python через University of Michigan и Coursera.",
+        cert_6_text: "Badge/certificate IBM SkillsBuild по основам искусственного интеллекта.",
         credly_btn: "🏅 Посмотреть все мои сертификаты Credly →",
 
-        contact_title: "Контакты",
-        contact_sub: "Вы можете заполнить форму ниже, чтобы отправить сообщение.",
+        contact_title: "Связаться",
+        contact_sub: "Можно заполнить форму ниже и отправить сообщение.",
         form_title: "✉ Отправить сообщение",
         form_name: "Ваше имя",
         form_email: "Ваш email",
         form_message: "Напишите сообщение...",
         form_btn: "Отправить",
-        form_note: "Эта форма открывается через почтовое приложение. Позже можно подключить Formspree или EmailJS для реальной отправки.",
+        form_note: "Эта форма откроется через email-приложение. Позже можно подключить Formspree или EmailJS для настоящей отправки.",
 
         footer_text: "создал этот сайт."
       }
     };
 
     const typingWords = {
-      uz: [
-        "zamonaviy portfolio va web sahifalar",
-        "AI tools va foydali interfeyslar",
-        "GitHub Pages va premium dizaynlar"
-      ],
-      en: [
-        "modern portfolio and web pages",
-        "AI tools and useful interfaces",
-        "GitHub Pages and premium designs"
-      ],
-      ru: [
-        "современными сайтами-портфолио",
-        "AI tools и полезными интерфейсами",
-        "GitHub Pages и премиальным дизайном"
-      ]
+      uz: ["zamonaviy portfolio va web sahifalar", "AI yordamida loyiha g‘oyalari", "responsive va premium dizaynlar"],
+      en: ["modern portfolios and web pages", "AI-powered project ideas", "responsive and premium designs"],
+      ru: ["современными портфолио и веб-страницами", "идеями проектов с AI", "адаптивным и премиальным дизайном"]
     };
 
     let currentLang = "uz";
     let wordIndex = 0;
     let typingInterval;
 
-    function applyLanguage(lang) {
+    function applyLanguage(lang){
       currentLang = lang;
       document.documentElement.lang = lang;
+      localStorage.setItem("portfolioLang", lang);
 
       document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
-        if (translations[lang] && translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
+        if(translations[lang][key]) el.textContent = translations[lang][key];
       });
 
       document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
         const key = el.getAttribute("data-i18n-placeholder");
-        if (translations[lang] && translations[lang][key]) {
-          el.placeholder = translations[lang][key];
-        }
+        if(translations[lang][key]) el.placeholder = translations[lang][key];
       });
 
-      document.getElementById("langBtn").textContent =
-        (lang === "uz" ? "UZ ▼" : lang === "en" ? "EN ▼" : "RU ▼");
+      const label = lang === "uz" ? "UZ" : lang === "en" ? "EN" : "RU";
+      document.getElementById("langBtn").textContent = label + " ▼";
 
-      startTyping();
+      const typingText = document.getElementById("typingText");
+      if(typingText){
+        wordIndex = 0;
+        typingText.textContent = typingWords[lang][0];
+        restartTyping();
+      }
     }
 
-    function startTyping() {
+    function restartTyping(){
       clearInterval(typingInterval);
       const typingText = document.getElementById("typingText");
       const words = typingWords[currentLang];
-      typingText.textContent = words[wordIndex % words.length];
-
       typingInterval = setInterval(() => {
         wordIndex = (wordIndex + 1) % words.length;
         typingText.textContent = words[wordIndex];
