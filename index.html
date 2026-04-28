@@ -2030,11 +2030,18 @@
     }
 
     const loadingScreen = document.getElementById("loadingScreen");
-    window.addEventListener("load", () => {
-      setTimeout(() => {
+
+    function hideLoader(){
+      if(loadingScreen){
         loadingScreen.classList.add("hidden");
-      }, 1500);
+      }
+    }
+
+    window.addEventListener("load", () => {
+      setTimeout(hideLoader, 1500);
     });
+
+    setTimeout(hideLoader, 3000);
 
     const reveals = document.querySelectorAll(".reveal");
     const skillFills = document.querySelectorAll(".skill-fill");
@@ -2141,7 +2148,7 @@
       }
     });
 
-    applyLanguage("uz");
+    applyLanguage(localStorage.getItem("portfolioLang") || "uz");
   </script>
 </body>
 </html>
