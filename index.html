@@ -11,18 +11,18 @@
 
   <style>
     :root{
-      --bg-1:#05030f;
-      --bg-2:#120824;
-      --bg-3:#24113f;
-      --card:rgba(18,12,34,.82);
-      --text:#fff7ed;
-      --muted:rgba(255,237,213,.78);
-      --cyan:#fbbf24;
-      --blue:#fb7185;
-      --purple:#a78bfa;
-      --pink:#f472b6;
-      --green:#34d399;
-      --shadow:0 18px 50px rgba(0,0,0,.45);
+      --bg-1:#03111f;
+      --bg-2:#071d33;
+      --bg-3:#0d2b4a;
+      --card:rgba(14,30,55,.78);
+      --text:#f4fbff;
+      --muted:rgba(225,240,255,.76);
+      --cyan:#22d3ee;
+      --blue:#38bdf8;
+      --purple:#a855f7;
+      --pink:#ec4899;
+      --green:#10b981;
+      --shadow:0 18px 50px rgba(0,0,0,.35);
       --radius:28px;
       --max:1180px;
     }
@@ -42,9 +42,9 @@
       font-family:'Poppins',sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at 18% 22%, rgba(167,139,250,.18), transparent 28%),
-        radial-gradient(circle at 82% 18%, rgba(251,191,36,.14), transparent 24%),
-        radial-gradient(circle at 50% 88%, rgba(244,114,182,.12), transparent 26%),
+        radial-gradient(circle at 15% 20%, rgba(34,211,238,.10), transparent 20%),
+        radial-gradient(circle at 85% 15%, rgba(168,85,247,.12), transparent 24%),
+        radial-gradient(circle at 50% 85%, rgba(236,72,153,.08), transparent 22%),
         linear-gradient(135deg,var(--bg-1),var(--bg-2),var(--bg-3));
       min-height:100vh;
       position:relative;
@@ -434,10 +434,9 @@
     }
 
     .gradient-text{
-      background:linear-gradient(90deg,#fbbf24,#f472b6,#a78bfa);
+      background:linear-gradient(45deg,#dff8ff,var(--blue),var(--purple),#f3baff);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
-      text-shadow:0 0 22px rgba(251,191,36,.18);
     }
 
     .hero p{
